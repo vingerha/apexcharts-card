@@ -618,6 +618,12 @@ export default class GraphEntry {
     return max === null || min === null ? null : Math.abs(max - min);
   }
 
+  private _delta2(items: EntityCachePoints): number | null {
+    const max2 = this._maximum(items);
+    const min2 = this._minimum(items);
+    return max2 === null || min2 === null ? null : Math.abs(max2 - min2);
+  }
+
 
   private _diff(items: EntityCachePoints): number | null {
     const noNulls = this._filterNulls(items);
