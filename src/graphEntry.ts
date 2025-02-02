@@ -615,9 +615,10 @@ export default class GraphEntry {
   private _delta(items: EntityCachePoints): number | null {
     const max = this._maximum(items);
     const min = this._minimum(items);
+    let delta: number | null = null;
     if (max === null || min === null)
-    { const delta = null; }
-    else { const delta = max - min ;}
+    { delta = null; }
+    else { delta = max - min ;}
     return delta;
   }
 
