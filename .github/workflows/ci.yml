@@ -52,7 +52,9 @@ jobs:
           restore-keys: |
             ${{ runner.OS }}-node-${{ matrix.node-version }}
             ${{ runner.OS }}-
-      - name: Install dependencies
+      - name: Install dependencies 1
+        run: npm install        
+      - name: Install dependencies 2
         run: npm ci
       - name: Build the project
         run: npm run build --if-present
