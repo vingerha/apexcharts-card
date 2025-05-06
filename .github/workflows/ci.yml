@@ -25,7 +25,9 @@ jobs:
           restore-keys: |
             ${{ runner.OS }}-node-16.x
             ${{ runner.OS }}-
-      - name: Install dependencies
+      - name: Install dependencies 1
+        run: npm install           
+      - name: Install dependencies 2
         run: npm ci
       - name: Lint the code
         run: npm run lint --if-present
