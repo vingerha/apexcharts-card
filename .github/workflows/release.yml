@@ -25,6 +25,7 @@ jobs:
             ${{ runner.OS }}-node-16.x
             ${{ runner.OS }}-
       - name: Install dependencies
+        run: npm install
         run: npm ci
       - name: Release
         run: npx semantic-release
