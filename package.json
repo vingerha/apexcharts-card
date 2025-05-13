@@ -1,6 +1,6 @@
 {
   "name": "apexcharts-card",
-  "version": "2.1.2",
+  "version": "1.0.0",
   "description": "A Home Assistant Lovelace card using ApexCharts to render graphs",
   "main": "src/apexcharts-card.ts",
   "scripts": {
@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/RomRider/apexcharts-card.git"
+    "url": "git+https://github.com/vingerha/apexcharts-card.git"
   },
   "keywords": [
     "lovelace",
@@ -25,13 +25,13 @@
   "author": "Jérôme Wiedemann",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/RomRider/apexcharts-card/issues"
+    "url": "https://github.com/vingerha/apexcharts-card/issues"
   },
-  "homepage": "https://github.com/RomRider/apexcharts-card#readme",
+  "homepage": "https://github.com/vingerha/apexcharts-card#readme",
   "dependencies": {
     "@ctrl/tinycolor": "^3.6.1",
     "@material/mwc-ripple": "^0.25.3",
-    "apexcharts": "^3.50.0",
+    "apexcharts": "^4.7.0",
     "array-flat-polyfill": "^1.0.1",
     "custom-card-helpers": "^1.9.0",
     "lit": "^2.8.0",
