@@ -472,7 +472,7 @@ export default class GraphEntry {
     start: Date | undefined,
     end: Date | undefined,
     period: StatisticsPeriod = DEFAULT_STATISTICS_PERIOD,
-  ): Promise<StatisticValue[] | undefined> {
+  ): Promise<StatisticValue[] | undefined> {  
     const statistics = await this._hass?.callWS<Statistics>({
       type: 'recorder/statistics_during_period',
       start_time: start?.toISOString(),
@@ -520,10 +520,8 @@ export default class GraphEntry {
       }
       if (this._config.group_by.start_with_last) {
         if (index > 0) {
-          if (bucket.data.length === 0 || bucket.data[0][0] !== bucket.timestamp) {
-            const prevBucketData = buckets[index - 1].data;
-            bucket.data.unshift([bucket.timestamp, prevBucketData[prevBucketData.length - 1][1]]);
-          }
+			const prevBucketData = buckets[index - 1].data;
+			bucket.data.unshift([bucket.timestamp, prevBucketData[prevBucketData.length - 1][1]]);
         } else {
           const firstIndexAfter = history.data.findIndex((entry) => {
             if (entry[0] > bucket.timestamp) return true;

@@ -1,3 +1,52 @@
+## [1.1.0-dev.5](https://github.com/vingerha/apexcharts-card/compare/v1.1.0-dev.4...v1.1.0-dev.5) (2025-07-19)
+
+
+### Bug Fixes
+
+* **lovelace:** lovelace grid_options ([bb900fa](https://github.com/vingerha/apexcharts-card/commit/bb900fabe6c82febd929b788e78f8d02b24eea1a))
+
+## [1.1.0-dev.4](https://github.com/vingerha/apexcharts-card/compare/v1.1.0-dev.3...v1.1.0-dev.4) (2025-07-19)
+
+
+### Bug Fixes
+
+* **lovelace:** add lovelace features ([fba16a8](https://github.com/vingerha/apexcharts-card/commit/fba16a830574d214b48bd1cb3beca55c7c21b156))
+* **lovelace:** lovelace ([3edc6f6](https://github.com/vingerha/apexcharts-card/commit/3edc6f6e8bfbefe90ea91df4d3733fdf85d6d29f))
+* **lovelace:** lovelace2 ([54b81c6](https://github.com/vingerha/apexcharts-card/commit/54b81c66596b3b56b7d35f7192ef8f5ff8c0b80a))
+
+## [1.1.0-dev.3](https://github.com/vingerha/apexcharts-card/compare/v1.1.0-dev.2...v1.1.0-dev.3) (2025-07-19)
+
+
+### Bug Fixes
+
+* **various:** undo year and fix start_with_last ([bf2b323](https://github.com/vingerha/apexcharts-card/commit/bf2b323bd8c78e03a104afd25f17b59e7748a446))
+
+## [1.1.0-dev.2](https://github.com/vingerha/apexcharts-card/compare/v1.1.0-dev.1...v1.1.0-dev.2) (2025-07-19)
+
+
+### Features
+
+* **statistics:** add year ([7baccf8](https://github.com/vingerha/apexcharts-card/commit/7baccf8c69f9a98d96a2762cba729ae99eb782e3))
+
+
+### Bug Fixes
+
+* **statistics:** add year to statistic period ([79d54e1](https://github.com/vingerha/apexcharts-card/commit/79d54e13d069db7879ee4159d83dd0bbe5315cf4))
+
+## [1.1.0-dev.2](https://github.com/vingerha/apexcharts-card/compare/v1.1.0-dev.1...v1.1.0-dev.2) (2025-07-19)
+
+
+### Bug Fixes
+
+* **statistics:** add year to statistic period ([79d54e1](https://github.com/vingerha/apexcharts-card/commit/79d54e13d069db7879ee4159d83dd0bbe5315cf4))
+
+## [1.1.0-dev.1](https://github.com/vingerha/apexcharts-card/compare/v1.0.2...v1.1.0-dev.1) (2025-07-19)
+
+
+### Features
+
+* **statistics:** add year to statistic period ([32a66b8](https://github.com/vingerha/apexcharts-card/commit/32a66b80ad6ddf2f4d0d575e67806ded253ef5d6))
+
 ### [1.0.2](https://github.com/vingerha/apexcharts-card/compare/v1.0.1...v1.0.2) (2025-07-19)
 
 
