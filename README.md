@@ -1,14 +1,23 @@
-[![License](https://img.shields.io/github/license/RomRider/apexcharts-card.svg)](LICENSE)
+[![License](https://img.shields.io/github/license/vingerha/apexcharts-card.svg)](LICENSE)
 [![HACS Supported](https://img.shields.io/badge/HACS-Supported-green.svg)](https://github.com/custom-components/hacs)
-![Downloads](https://img.shields.io/github/downloads/RomRider/apexcharts-card/total)
-![GitHub Activity](https://img.shields.io/github/commit-activity/y/RomRider/apexcharts-card.svg?label=commits)
-[![Stable](https://img.shields.io/github/release/RomRider/apexcharts-card.svg)](https://github.com/RomRider/apexcharts-card/releases/latest)
-[![Beta](https://img.shields.io/github/package-json/v/RomRider/apexcharts-card/dev?label=release%40dev)](https://github.com/RomRider/apexcharts-card/releases)
+![Downloads](https://img.shields.io/github/downloads/vingerha/apexcharts-card/total)
+![GitHub Activity](https://img.shields.io/github/commit-activity/y/vingerha/apexcharts-card.svg?label=commits)
+[![Stable](https://img.shields.io/github/release/vingerha/apexcharts-card.svg)](https://github.com/vingerha/apexcharts-card/releases/latest)
+[![Beta](https://img.shields.io/github/package-json/v/vingerha/apexcharts-card/dev?label=release%40dev)](https://github.com/vingerha/apexcharts-card/releases)
 [![Community Forum](https://img.shields.io/badge/community-forum-brightgreen.svg)](https://community.home-assistant.io/t/apexcharts-card-a-highly-customizable-graph-card/272877)
 
-# ApexCharts Card by [@RomRider](https://github.com/RomRider) <!-- omit in toc -->
+# This is a FORK of the ApexCharts Card by [@RomRider](https://github.com/RomRider) <!-- omit in toc -->
 
-![Header](https://github.com/RomRider/apexcharts-card/raw/master/docs/Header.png)
+## The original repo seems no longer supported since mid 2024, I am using this for my own/private change ##
+
+Disclaimer: 
+I am not a seasoned developer and the card itself is quite technical which adds challenges to my lack of development skills
+
+As a result I cannot commit to fixing issues, I applied a few from the source/RomRider and **I can accept PR's if they have been tested**
+
+## Doc stuff:
+
+![Header](https://github.com/vingerha/apexcharts-card/raw/master/docs/Header.png)
 
 This is higly customizable graph card for [Home-Assistant](https://www.home-assistant.io)'s Lovelace UI.<br/>
 
@@ -88,7 +97,7 @@ This card is available in [HACS](https://hacs.xyz/) (Home Assistant Community St
 2. Grab `apexcharts-card.js`:
 
 ```
-$ wget https://github.com/RomRider/apexcharts-card/releases/download/v1.0.1/apexcharts-card.js
+$ wget https://github.com/RomRider/apexcharts-card/releases/download/v1.0.2/apexcharts-card.js
 ```
 
 3. Add the resource reference as decribed below.
@@ -99,7 +108,7 @@ If you configure Lovelace via YAML, add a reference to `apexcharts-card.js` insi
 
 ```yaml
 resources:
-  - url: /local/apexcharts-card.js?v=1.0.1
+  - url: /local/apexcharts-card.js?v=1.0.2
     type: module
 ```
 
