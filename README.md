@@ -8,6 +8,8 @@
 
 ## This is a copy of the ApexCharts Card by [@RomRider](https://github.com/RomRider) as the original repo seems no longer supported since mid 2024 <!-- omit in toc -->
 
+**Created 19 July 2025 and in the process of cleaning, fixing, updating which may take quite a while as the basis was old-ish too :)**
+
 **Disclaimer**: 
 I am not a seasoned developer and the card itself is quite technical as well, which adds challenges to my lack of development skills. As a result I cannot commit to fixing issues.
 I applied a few PR/issues noted from the source/RomRider and **I can accept PR's if they have been thoroughly tested**
