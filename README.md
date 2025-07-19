@@ -97,7 +97,7 @@ This card is available in [HACS](https://hacs.xyz/) (Home Assistant Community St
 2. Grab `apexcharts-card.js`:
 
 ```
-$ wget https://github.com/RomRider/apexcharts-card/releases/download/v1.0.2/apexcharts-card.js
+$ wget https://github.com/RomRider/apexcharts-card/releases/download/v1.1.0/apexcharts-card.js
 ```
 
 3. Add the resource reference as decribed below.
@@ -108,7 +108,7 @@ If you configure Lovelace via YAML, add a reference to `apexcharts-card.js` insi
 
 ```yaml
 resources:
-  - url: /local/apexcharts-card.js?v=1.0.2
+  - url: /local/apexcharts-card.js?v=1.1.0
     type: module
 ```
 
