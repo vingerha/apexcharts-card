@@ -78,14 +78,12 @@ However, some things might be broken :grin:
 
 ## Installation
 
-### HACS (recommended)
-
-This card is available in [HACS](https://hacs.xyz/) (Home Assistant Community Store).
-<small>_HACS is a third party community store and is not included in Home Assistant out of the box._</small>
 
 ### Manual install
 
-1. Download and copy `apexcharts-card.js` from the [latest release](https://github.com/RomRider/apexcharts-card/releases/latest) into your `config/www` directory.
+For now this is the only method as the original version/source still is represented there.
+
+1. Download and copy `apexcharts-card.js` from the [latest release](https://github.com/vingera/apexcharts-card/releases/latest) into your `config/www` directory.
 
 2. Add the resource reference as decribed below.
 
@@ -96,7 +94,7 @@ This card is available in [HACS](https://hacs.xyz/) (Home Assistant Community St
 2. Grab `apexcharts-card.js`:
 
 ```
-$ wget https://github.com/RomRider/apexcharts-card/releases/download/v1.1.0/apexcharts-card.js
+$ wget https://github.com/vingerha/apexcharts-card/releases/download/v1.1.0/apexcharts-card.js
 ```
 
 3. Add the resource reference as decribed below.
