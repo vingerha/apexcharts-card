@@ -8,11 +8,12 @@
 
 # This is a FORK of the ApexCharts Card by [@RomRider](https://github.com/RomRider) <!-- omit in toc -->
 
-## the original repo seems no longer supported since mid 2024, I am using this for my own/private change ##
+## The original repo seems no longer supported since mid 2024, I am using this for my own/private change ##
 
-Disclaimer: I am not a seasoned developer and therefore cannot commit to fixing issues, the card itself is quite technical which adds challenges to my lack of development skills
+Disclaimer: 
+I am not a seasoned developer and the card itself is quite technical which adds challenges to my lack of development skills
 
-**I can accept PR's if they have been tested**
+As a result I cannot commit to fixing issues, I applied a few from the source/RomRider and **I can accept PR's if they have been tested**
 
 ## Doc stuff:
 
