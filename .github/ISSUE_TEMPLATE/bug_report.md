@@ -13,13 +13,13 @@ body:
     id: checked-docu
     attributes:
       label: Own Analysis
-      description: I have read the documentation which did not provide help neither from the HomeAssistant forum. I have tried to review and/or install a newer (beta) release. 
+      description: I have read the documentation which did not provide help, neither from the HomeAssistant forum. 
       options:
         - label: I cannot find my issue in the documentation nor via the Forum
           required: true
         - label: The issue is not resolved with the latest (beta) release
           required: true
-        - label: In understand that this repo has been created mainly to support critical bugs, I understand that my issue may not be fixed (easily)
+        - label: In understand that this repo has been created mainly to support critical bugs, I understand that my issue may not be fixed easily
           required: true
   - type: textarea
     id: what-happened
