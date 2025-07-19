@@ -47,6 +47,7 @@ export interface ChartCardExternalConfig {
   yaxis?: ChartCardYAxisExternal[];
 }
 
+
 export type ChartCardChartType = 'line' | 'scatter' | 'pie' | 'donut' | 'radialBar';
 
 export interface ChartCardBrushExtConfig {
