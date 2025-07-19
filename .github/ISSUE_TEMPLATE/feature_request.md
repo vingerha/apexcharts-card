@@ -6,6 +6,7 @@ labels: ''
 assignees: ''
 
 ---
+**IMPORTANT DISCLAIMER: This repo has been reated to support critical bugs. I am not a seasoned developer and may not be able to fix issues**
 
 **Checklist**
 - [ ] I am running the latest version of the card
