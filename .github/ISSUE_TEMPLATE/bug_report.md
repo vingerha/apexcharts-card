@@ -8,7 +8,7 @@ body:
   - type: markdown
     attributes:
       value: |
-        ## Note that clairvoyancy does not exist ... if you provide no details to replicate => no response
+        ## Note that clairvoyancy does not exist ... if you provide no details to replicate = no response
   - type: checkboxes
     id: checked-docu
     attributes:
