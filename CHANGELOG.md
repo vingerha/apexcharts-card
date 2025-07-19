@@ -1,3 +1,10 @@
+### [1.0.1](https://github.com/vingerha/apexcharts-card/compare/v1.0.0...v1.0.1) (2025-07-19)
+
+
+### Bug Fixes
+
+* **card:** visibility issue ([616f957](https://github.com/vingerha/apexcharts-card/commit/616f9571153edd43bfd1f62003c8eea781af8f6d))
+
 ## 1.0.0 (2025-05-13)
 
 
