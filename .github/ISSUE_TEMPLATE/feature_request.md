@@ -6,12 +6,13 @@ labels: ''
 assignees: ''
 
 ---
-**IMPORTANT DISCLAIMER: This repo has been reated to support critical bugs. I am not a seasoned developer and may not be able to fix issues**
+**IMPORTANT DISCLAIMER: This repo has been reated to support critical bugs. I am not a seasoned developer and likely not be able to help with features**
 
 **Checklist**
 - [ ] I am running the latest version of the card
 - [ ] I checked if there isn't another feature request opened with the same request
 - [ ] I checked that the feature is not already available in the `dev` branch
+- [ ] I understand the above disclaimer
 
 **Is your feature request related to a problem? Please describe.**
 A clear and concise description of what the problem is. Ex. I'm always frustrated when [...]
