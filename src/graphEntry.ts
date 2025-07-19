@@ -475,6 +475,16 @@ export default class GraphEntry {
     end: Date | undefined,
     period: StatisticsPeriod = DEFAULT_STATISTICS_PERIOD,
   ): Promise<StatisticValue[] | undefined> {
+    const statistic = await this._hass?.callWS<StatisticValue>({
+      type: 'recorder/statistic_during_period',
+      statistic_id: this._entityID,
+      calendar: {
+        period
+      }
+    });
+    if (statistic) {
+      return [statistic];
+    }	  
     const statistics = await this._hass?.callWS<Statistics>({
       type: 'recorder/statistics_during_period',
       start_time: start?.toISOString(),
