@@ -1,3 +1,10 @@
+## [1.1.0-dev.2](https://github.com/vingerha/apexcharts-card/compare/v1.1.0-dev.1...v1.1.0-dev.2) (2025-07-19)
+
+
+### Bug Fixes
+
+* **statistics:** add year to statistic period ([79d54e1](https://github.com/vingerha/apexcharts-card/commit/79d54e13d069db7879ee4159d83dd0bbe5315cf4))
+
 ## [1.1.0-dev.1](https://github.com/vingerha/apexcharts-card/compare/v1.0.2...v1.1.0-dev.1) (2025-07-19)
 
 
