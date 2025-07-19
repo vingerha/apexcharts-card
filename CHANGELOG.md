@@ -1,3 +1,10 @@
+## [1.1.0-dev.5](https://github.com/vingerha/apexcharts-card/compare/v1.1.0-dev.4...v1.1.0-dev.5) (2025-07-19)
+
+
+### Bug Fixes
+
+* **lovelace:** lovelace grid_options ([bb900fa](https://github.com/vingerha/apexcharts-card/commit/bb900fabe6c82febd929b788e78f8d02b24eea1a))
+
 ## [1.1.0-dev.4](https://github.com/vingerha/apexcharts-card/compare/v1.1.0-dev.3...v1.1.0-dev.4) (2025-07-19)
 
 
