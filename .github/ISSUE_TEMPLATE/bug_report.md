@@ -14,6 +14,7 @@ assignees: ''
 - [ ] I cleared the cache of my browser
 - [ ] I verified that I'm really running the lastest version in my browser console
 - [ ] I checked if there is another issue opened with the same problem
+- [ ] I understand the above disclaimer
 
 **Describe the bug**
 A clear and concise description of what the bug is.
