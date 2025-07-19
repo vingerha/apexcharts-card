@@ -1,3 +1,12 @@
+## [1.1.0-dev.4](https://github.com/vingerha/apexcharts-card/compare/v1.1.0-dev.3...v1.1.0-dev.4) (2025-07-19)
+
+
+### Bug Fixes
+
+* **lovelace:** add lovelace features ([fba16a8](https://github.com/vingerha/apexcharts-card/commit/fba16a830574d214b48bd1cb3beca55c7c21b156))
+* **lovelace:** lovelace ([3edc6f6](https://github.com/vingerha/apexcharts-card/commit/3edc6f6e8bfbefe90ea91df4d3733fdf85d6d29f))
+* **lovelace:** lovelace2 ([54b81c6](https://github.com/vingerha/apexcharts-card/commit/54b81c66596b3b56b7d35f7192ef8f5ff8c0b80a))
+
 ## [1.1.0-dev.3](https://github.com/vingerha/apexcharts-card/compare/v1.1.0-dev.2...v1.1.0-dev.3) (2025-07-19)
 
 
