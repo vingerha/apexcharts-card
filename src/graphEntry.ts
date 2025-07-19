@@ -290,8 +290,6 @@ export default class GraphEntry {
                 displayDate = new Date(startDate.getTime() + 43200000); // 12h
               } else if (this._config.statistics.period === 'week') {
                 displayDate = new Date(startDate.getTime() + 259200000); // 3.5d
-              } else if (this._config.statistics.period === 'month') {
-                displayDate = new Date(startDate.getTime() + 1296000000); // 15d
               } else {
                 displayDate = new Date(startDate.getTime() + 1296000000); // 15d
               }
