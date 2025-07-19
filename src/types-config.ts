@@ -64,7 +64,7 @@ export interface ChartCardSpanExtConfig {
 
 export type ChartCardStartEnd = 'minute' | 'hour' | 'day' | 'week' | 'month' | 'year' | 'isoWeek';
 
-export type StatisticsPeriod = '5minute' | 'hour' | 'day' | 'week' | 'month' | 'year';
+export type StatisticsPeriod = '5minute' | 'hour' | 'day' | 'week' | 'month';
 
 export interface ChartCardAllSeriesExternalConfig {
   entity?: string;
