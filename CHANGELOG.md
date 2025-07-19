@@ -1,3 +1,10 @@
+## [1.1.0-dev.3](https://github.com/vingerha/apexcharts-card/compare/v1.1.0-dev.2...v1.1.0-dev.3) (2025-07-19)
+
+
+### Bug Fixes
+
+* **various:** undo year and fix start_with_last ([bf2b323](https://github.com/vingerha/apexcharts-card/commit/bf2b323bd8c78e03a104afd25f17b59e7748a446))
+
 ## [1.1.0-dev.2](https://github.com/vingerha/apexcharts-card/compare/v1.1.0-dev.1...v1.1.0-dev.2) (2025-07-19)
 
 
