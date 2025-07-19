@@ -7,6 +7,8 @@ assignees: ''
 
 ---
 
+**IMPORTANT DISCLAIMER: This repo has been reated to support critical bugs. I am not a seasoned developer and may not be able to fix issues**
+
 **Checklist**
 - [ ] I updated the card to the latest version available
 - [ ] I cleared the cache of my browser
