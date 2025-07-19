@@ -12,7 +12,16 @@ import {
   HistoryPoint,
   minmax_type,
 } from './types';
-import { handleAction, HomeAssistant } from 'custom-card-helpers';
+import {
+  handleAction,
+  getLovelace,
+  hasConfigOrEntityChanged,
+  HomeAssistant,
+  LovelaceCard,
+  LovelaceCardConfig,
+  LovelaceCardEditor,
+  LovelaceConfig,
+} from "custom-card-helpers";
 import localForage from 'localforage';
 import * as pjson from '../package.json';
 import {
@@ -84,6 +93,7 @@ import parse from 'parse-duration';
 import tinycolor from '@ctrl/tinycolor';
 import { actionHandler } from './action-handler-directive';
 import { OverrideFrontendLocaleData } from './types-ha';
+import "./apexcharts-card-editor";
 
 /* eslint no-console: 0 */
 console.info(
@@ -198,6 +208,10 @@ class ChartsCard extends LitElement {
     }
     this._updating = false;
     super.disconnectedCallback();
+  }
+
+  static async getConfigElement(): Promise<LovelaceCardEditor> {
+    return document.createElement("apexcharts-card-editor");
   }
 
   private _updateOnInterval(): void {
