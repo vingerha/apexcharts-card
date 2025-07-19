@@ -19,7 +19,7 @@ body:
           required: true
         - label: The issue is not resolved with the latest (beta) release
           required: true
-        - label: In understand that this repo has been created mainly to support critical bugs, I understand that my issue may not be fixed easily
+        - label: I understand that this repo has been created mainly to support critical bugs, I understand that my issue may not be fixed easily
           required: true
   - type: textarea
     id: what-happened
