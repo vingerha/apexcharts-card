@@ -1,48 +1,42 @@
----
 name: Bug report
-about: Create a report to help us improve
-title: ''
-labels: bug
-assignees: ''
+description: File a bug report
+title: "[Bug]: "
+labels: ["bug", "triage"]
+assignees:
+  - []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Note that clairvoyancy does not exist ... if you provide no details to replicate => no response
+  - type: checkboxes
+    id: checked-docu
+    attributes:
+      label: Own Analysis
+      description: I have read the documentation which did not provide help neither from the HomeAssistant forum. I have tried to review and/or install a newer (beta) release. 
+      options:
+        - label: I cannot find my issue in the documentation nor via the Forum
+          required: true
+        - label: The issue is not resolved with the latest (beta) release
+          required: true
+        - label: In understand that this repo has been created mainly to support critical bugs, I understand that my issue may not be fixed (easily)
+          required: true
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: A clear and concise description of what the bug is.
+      description: |
+        - has it worked before
+        - what it does not do vs. expectation
+      render: shell
+    validations:
+      required: true     
+  - type: textarea
+    id: logs
+    attributes:
+      label: Relevant log output
+      description: Please copy and paste any relevant log output. This will be automatically formatted into code, so no need for backticks.
+      render: shell
 
----
 
-**IMPORTANT DISCLAIMER: This repo has been reated to support critical bugs. I am not a seasoned developer and may not be able to fix issues**
 
-**Checklist**
-- [ ] I updated the card to the latest version available
-- [ ] I cleared the cache of my browser
-- [ ] I verified that I'm really running the lastest version in my browser console
-- [ ] I checked if there is another issue opened with the same problem
-- [ ] I understand the above disclaimer
-
-**Describe the bug**
-A clear and concise description of what the bug is.
-
-**Version of the card**
-Version:
-
-**To Reproduce**
-This is the configuration I used:
-```yaml
-
-```
-
-**Screenshots**
-If applicable, add screenshots to help explain your problem.
-
-**Expected behavior**
-A clear and concise description of what you expected to happen.
-
-**Desktop (please complete the following information):**
- - Browser [e.g. chrome, safari]
- - Version [e.g. 22]
-
-**Smartphone (please complete the following information):**
- - Device: [e.g. iPhone6]
- - OS: [e.g. iOS8.1]
- - Browser [e.g. stock browser, safari]
- - Version [e.g. 22]
-
-**Additional context**
-Add any other context about the problem here.
