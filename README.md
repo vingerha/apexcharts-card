@@ -12,7 +12,9 @@
 
 Disclaimer: I am not a seasoned developer and therefore cannot commit to fixing issues, the card itself is quite technical which adds challenges to my lack of development skills
 
-** I can accept PR's if they have been tested **
+**I can accept PR's if they have been tested**
+
+## Doc stuff:
 
 ![Header](https://github.com/vingerha/apexcharts-card/raw/master/docs/Header.png)
 
