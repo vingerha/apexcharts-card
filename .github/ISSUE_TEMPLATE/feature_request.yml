@@ -9,6 +9,10 @@ body:
     attributes:
       value: |
         Is your request really a feature or aiming to fix a bug, then raise a [BUG REPORT](https://github.com/vingerha/apexcharts-card/issues/new?assignees=&labels=bug%2Ctriage&projects=&template=bug_report.yml&title=%5BBug%5D%3A+)
+  - type: markdown
+    attributes:
+      value: |
+        I understand that this repo has been created mainly to support critical bugs, I understand that my issue may not be fixed easily
   - type: textarea
     id: description
     attributes:
