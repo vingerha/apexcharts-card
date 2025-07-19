@@ -6,16 +6,15 @@
 [![Beta](https://img.shields.io/github/package-json/v/vingerha/apexcharts-card/dev?label=release%40dev)](https://github.com/vingerha/apexcharts-card/releases)
 [![Community Forum](https://img.shields.io/badge/community-forum-brightgreen.svg)](https://community.home-assistant.io/t/apexcharts-card-a-highly-customizable-graph-card/272877)
 
-## This is a FORK of the ApexCharts Card <!-- omit in toc -->
+## This is a copy of the ApexCharts Card by [@RomRider](https://github.com/RomRider) as the original repo seems no longer supported since mid 2024 <!-- omit in toc -->
 
-## The original repo seems no longer supported since mid 2024, I am using this for my own/private change ##
+**Created 19 July 2025 and in the process of cleaning, fixing, updating which may take quite a while as the basis was old-ish too :)**
 
 **Disclaimer**: 
-I am not a seasoned developer and the card itself is quite technical which adds challenges to my lack of development skills
+I am not a seasoned developer and the card itself is quite technical as well, which adds challenges to my lack of development skills. As a result I cannot commit to fixing issues.
+I applied a few PR/issues noted from the source/RomRider and **I can accept PR's if they have been thoroughly tested**
 
-As a result I cannot commit to fixing issues, I applied a few from the source/RomRider and **I can accept PR's if they have been tested**
-
-## This is a FORK of the ApexCharts Card by [@RomRider](https://github.com/RomRider) <!-- omit in toc -->
+## Documentation
 
 ![Header](https://github.com/vingerha/apexcharts-card/raw/master/docs/Header.png)
 
@@ -79,14 +78,12 @@ However, some things might be broken :grin:
 
 ## Installation
 
-### HACS (recommended)
-
-This card is available in [HACS](https://hacs.xyz/) (Home Assistant Community Store).
-<small>_HACS is a third party community store and is not included in Home Assistant out of the box._</small>
 
 ### Manual install
 
-1. Download and copy `apexcharts-card.js` from the [latest release](https://github.com/RomRider/apexcharts-card/releases/latest) into your `config/www` directory.
+For now this is the only method as the original version/source still is represented there.
+
+1. Download and copy `apexcharts-card.js` from the [latest release](https://github.com/vingera/apexcharts-card/releases/latest) into your `config/www` directory.
 
 2. Add the resource reference as decribed below.
 
@@ -97,7 +94,7 @@ This card is available in [HACS](https://hacs.xyz/) (Home Assistant Community St
 2. Grab `apexcharts-card.js`:
 
 ```
-$ wget https://github.com/RomRider/apexcharts-card/releases/download/v1.1.0/apexcharts-card.js
+$ wget https://github.com/vingerha/apexcharts-card/releases/download/v1.1.0/apexcharts-card.js
 ```
 
 3. Add the resource reference as decribed below.
