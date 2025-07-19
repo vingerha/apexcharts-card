@@ -14,13 +14,8 @@ import {
 } from './types';
 import {
   handleAction,
-  getLovelace,
-  hasConfigOrEntityChanged,
   HomeAssistant,
-  LovelaceCard,
-  LovelaceCardConfig,
   LovelaceCardEditor,
-  LovelaceConfig,
 } from "custom-card-helpers";
 import localForage from 'localforage';
 import * as pjson from '../package.json';
