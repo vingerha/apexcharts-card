@@ -12,7 +12,7 @@ body:
   - type: markdown
     attributes:
       value: |
-        I understand that this repo has been created mainly to support critical bugs, I understand that my issue may not be fixed easily
+        IMPORTANT: I understand that this repo has been created mainly to support critical bugs, I understand that my request may not be implemented
   - type: textarea
     id: description
     attributes:
