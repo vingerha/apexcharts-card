@@ -6,16 +6,14 @@
 [![Beta](https://img.shields.io/github/package-json/v/vingerha/apexcharts-card/dev?label=release%40dev)](https://github.com/vingerha/apexcharts-card/releases)
 [![Community Forum](https://img.shields.io/badge/community-forum-brightgreen.svg)](https://community.home-assistant.io/t/apexcharts-card-a-highly-customizable-graph-card/272877)
 
-## This is a FORK of the ApexCharts Card <!-- omit in toc -->
-
-## The original repo seems no longer supported since mid 2024, I am using this for my own/private change ##
+## This is a copy of the ApexCharts Card by [@RomRider](https://github.com/RomRider) as the original repo seems no longer supported since mid 2024 <!-- omit in toc -->
 
 **Disclaimer**: 
-I am not a seasoned developer and the card itself is quite technical which adds challenges to my lack of development skills
+I am not a seasoned developer and the card itself is quite technical as well, which adds challenges to my lack of development skills. As a result I cannot commit to fixing issues, I applied a few from the source/RomRider and 
 
-As a result I cannot commit to fixing issues, I applied a few from the source/RomRider and **I can accept PR's if they have been tested**
+**I can accept PR's if they have been thoroughly tested**
 
-## This is a FORK of the ApexCharts Card by [@RomRider](https://github.com/RomRider) <!-- omit in toc -->
+## Documentation
 
 ![Header](https://github.com/vingerha/apexcharts-card/raw/master/docs/Header.png)
 
