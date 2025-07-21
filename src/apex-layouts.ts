@@ -448,10 +448,11 @@ function getLegendFormatter(config: ChartCardConfig, hass: HomeAssistant | undef
 		if (offSet && (inLegend === 'after_now' || inLegend === 'before_now')) {
 			const xs = opts.w.globals.seriesX[opts.seriesIndex]; // X values
 			const ys = opts.w.globals.series[opts.seriesIndex];  // Y values
-			console.warn('getLegendFormatter xs: ', xs);
-			console.warn('getLegendFormatter ys: ', ys);		
+			//console.warn('getLegendFormatter xs: ', xs);
+			//console.warn('getLegendFormatter ys: ', ys);		
 			const points: { x: number; y: number }[] = xs.map((xVal: number, i: number) => ({ x: xVal, y: ys[i],}));
 			value = getLastValueBeforeNowWithOffset(points, offSet)
+			console.warn('getLegendFormatter value returned: ', value);
 		}
 		if (conf.series_in_graph[opts.seriesIndex]?.invert && value) {
 			value = -value;
