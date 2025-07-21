@@ -124,6 +124,7 @@ export function validateInterval(interval: string, prefix: string): number {
   if (parsed === undefined) {
     throw new Error(`'${prefix}: ${interval}' is not a valid range of time`);
   }
+  console.warn('validateOffset parsed: ', parsed);
   return parsed;
 }
 

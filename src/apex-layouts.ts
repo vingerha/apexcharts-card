@@ -11,7 +11,7 @@ import {
   TIMESERIES_TYPES,
 } from './const';
 import { ChartCardConfig } from './types';
-import { computeName, computeUom, is12Hour, mergeDeep, myFormatNumber, prettyPrintTime } from './utils';
+import { computeName, computeUom, is12Hour, mergeDeep, myFormatNumber, prettyPrintTime, validateInterval, validateOffset } from './utils';
 import { layoutMinimal } from './layouts/minimal';
 import { getLocales, getDefaultLocale } from './locales';
 import GraphEntry from './graphEntry';
@@ -428,6 +428,10 @@ function getLegendFormatter(config: ChartCardConfig, hass: HomeAssistant | undef
     } else {
 		const inLegend = conf.series_in_graph[opts.seriesIndex].show.in_legend;
 		const offSet = conf.series_in_graph[opts.seriesIndex].offset;
+		console.warn('getLegendFormatter offset: ', offSet);
+		offSet = parse(Offset)
+		console.warn('getLegendFormatter offset2: ', offSet);
+		offSet = parse(Offset)
 		let value = TIMESERIES_TYPES.includes(config.chart_type)
 			? opts.w.globals.series[opts.seriesIndex].slice(-1)[0]
 			: opts.w.globals.series[opts.seriesIndex];
