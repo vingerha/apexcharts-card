@@ -1,3 +1,10 @@
+### [1.1.1-dev.9](https://github.com/vingerha/apexcharts-card/compare/v1.1.1-dev.8...v1.1.1-dev.9) (2025-07-21)
+
+
+### Bug Fixes
+
+* **l:** more tuning ([1146cd3](https://github.com/vingerha/apexcharts-card/commit/1146cd35106208e375521aa90ccf41616549769e))
+
 ### [1.1.1-dev.8](https://github.com/vingerha/apexcharts-card/compare/v1.1.1-dev.7...v1.1.1-dev.8) (2025-07-21)
 
 
