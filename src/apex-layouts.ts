@@ -385,7 +385,7 @@ function getPlotOptions_radialBar(config: ChartCardConfig, hass: HomeAssistant |
 }
 
 function applyOffset(ts: number, offsetStr?: string): number {
-  console.warn('applyOffset number: ', number);
+  console.warn('applyOffset ts: ', ts);
   console.warn('applyOffset offsetStr: ', offsetStr);
   if (!offsetStr) return ts;
   const match = offsetStr.match(/^(-?\d+)([smhd])$/);
