@@ -388,7 +388,6 @@ function getPlotOptions_radialBar(config: ChartCardConfig, hass: HomeAssistant |
 function getLastValueBeforeNow(
   data: { x: number; y: number }[]
 ): number | undefined {
-  if (!offset) return undefined;
   const now = Date.now();
   let lastVal: number | undefined = undefined;
   for (const pt of data) {
