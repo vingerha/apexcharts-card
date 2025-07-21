@@ -1,3 +1,13 @@
+### [1.1.1-dev.1](https://github.com/vingerha/apexcharts-card/compare/v1.1.0...v1.1.1-dev.1) (2025-07-21)
+
+
+### Bug Fixes
+
+* **legend:** get offset value in legend ([d594648](https://github.com/vingerha/apexcharts-card/commit/d594648feef1dd0600f69c0579aa0a023de4ef02))
+* **legend:** tabs ([7db869a](https://github.com/vingerha/apexcharts-card/commit/7db869ace8896ad1a85b3d0767df4d3c66beb642))
+* **legend:** typo ([41b42dd](https://github.com/vingerha/apexcharts-card/commit/41b42dd44a9c9b22521067612db5740ba66a5ea9))
+* **legend:** value2 ([e782af2](https://github.com/vingerha/apexcharts-card/commit/e782af2b79e715e70f813eab8fea57cddec2dd2e))
+
 ## [1.1.0](https://github.com/vingerha/apexcharts-card/compare/v1.0.2...v1.1.0) (2025-07-19)
 
 
