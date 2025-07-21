@@ -408,9 +408,10 @@ function getLastValueBeforeNowWithOffset(
   console.warn('getLastValueBeforeNowWithOffset offset: ', offset);
   const now = Date.now();
   let lastVal: number | undefined = undefined;
-  console.warn('getLastValueBeforeNowWithOffset lastval: ', lastval);
+  console.warn('getLastValueBeforeNowWithOffset lastVal: ', lastVal);
   for (const pt of data) {
-	console.warn('getLastValueBeforeNowWithOffset pt: ', pt);
+	console.warn('getLastValueBeforeNowWithOffset pt.x: ', pt.x);
+	console.warn('getLastValueBeforeNowWithOffset pt.y: ', pt.y);
     const shifted = applyOffset(pt.x, offset);
     if (shifted < now) {
       lastVal = pt.y;
