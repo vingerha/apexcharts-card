@@ -1,3 +1,16 @@
+### [1.1.1-dev.4](https://github.com/vingerha/apexcharts-card/compare/v1.1.1-dev.3...v1.1.1-dev.4) (2025-07-21)
+
+
+### Bug Fixes
+
+* **l:** 3 ([f914368](https://github.com/vingerha/apexcharts-card/commit/f914368034220e28c4257235fff3ce6507086232))
+* **l:** 4 ([c02a585](https://github.com/vingerha/apexcharts-card/commit/c02a585310cd33b5d56b91c472962a25fe5637a9))
+* **legend:** further stuff log ([aec176f](https://github.com/vingerha/apexcharts-card/commit/aec176fba07cb00fab12fa80354e172f7f0573b9))
+* **legend:** typo ([e3ec64c](https://github.com/vingerha/apexcharts-card/commit/e3ec64c32f0a6f1ce96f36f58261fbeb4d580608))
+* **legend:** typo etc ([bd98ee4](https://github.com/vingerha/apexcharts-card/commit/bd98ee45aca82ad35b78fedd91d9c1f422d8aa0e))
+* **legen:** typo ([c6867cc](https://github.com/vingerha/apexcharts-card/commit/c6867ccabad4170510f20198fa59f5c1da6594fa))
+* **l:** typo ([39d7375](https://github.com/vingerha/apexcharts-card/commit/39d7375740ed4a06b476c18d4e00d8a450b3f27f))
+
 ### [1.1.1-dev.3](https://github.com/vingerha/apexcharts-card/compare/v1.1.1-dev.2...v1.1.1-dev.3) (2025-07-21)
 
 
