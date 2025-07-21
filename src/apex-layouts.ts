@@ -446,6 +446,7 @@ function getLegendFormatter(config: ChartCardConfig, hass: HomeAssistant | undef
 			: computeUom(
 				opts.seriesIndex,
 				conf.series_in_graph,
+				undefined,
 				hass2?.states[conf.series_in_graph[opts.seriesIndex].entity],
 			);
 		let valueString = '';
