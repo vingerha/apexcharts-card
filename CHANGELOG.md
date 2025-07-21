@@ -1,3 +1,10 @@
+## [1.2.0](https://github.com/vingerha/apexcharts-card/compare/v1.1.0...v1.2.0) (2025-07-21)
+
+
+### Features
+
+* **legend:** show legend-values before_now in case of offset ([d5c89a8](https://github.com/vingerha/apexcharts-card/commit/d5c89a8184984cca5da208759d0608d838b00a57))
+
 ## [1.1.0](https://github.com/vingerha/apexcharts-card/compare/v1.0.2...v1.1.0) (2025-07-19)
 
 

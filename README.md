@@ -94,7 +94,7 @@ For now this is the only method as the original version/source still is represen
 2. Grab `apexcharts-card.js`:
 
 ```
-$ wget https://github.com/vingerha/apexcharts-card/releases/download/v1.1.0/apexcharts-card.js
+$ wget https://github.com/vingerha/apexcharts-card/releases/download/v1.2.0/apexcharts-card.js
 ```
 
 3. Add the resource reference as decribed below.
@@ -105,7 +105,7 @@ If you configure Lovelace via YAML, add a reference to `apexcharts-card.js` insi
 
 ```yaml
 resources:
-  - url: /local/apexcharts-card.js?v=1.1.0
+  - url: /local/apexcharts-card.js?v=1.2.0
     type: module
 ```
 
