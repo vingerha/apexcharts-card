@@ -384,6 +384,34 @@ function getPlotOptions_radialBar(config: ChartCardConfig, hass: HomeAssistant |
   }
 }
 
+function applyOffset(ts: number, offsetStr?: string): number {
+  if (!offsetStr) return ts;
+  const match = offsetStr.match(/^(-?\d+)([smhd])$/);
+  if (!match) return ts;
+  const amount = parseInt(match[1], 10);
+  const unit = match[2];
+  const ms = { s: 1000, m: 60000, h: 3600000, d: 86400000 }[unit] || 0;
+  return ts + amount * ms;
+}
+
+function getLastValueBeforeNowWithOffset(
+  data: { x: number; y: number }[],
+  offset?: string
+): number | undefined {
+  if (!offset) return undefined;
+  const now = Date.now();
+  let lastVal: number | undefined = undefined;
+  for (const pt of data) {
+    const shifted = applyOffset(pt.x, offset);
+    if (shifted < now) {
+      lastVal = pt.y;
+    } else {
+      break;
+    }
+  }
+  return lastVal;
+}
+
 function getLegendFormatter(config: ChartCardConfig, hass: HomeAssistant | undefined) {
   return function (_, opts, conf = config, hass2 = hass) {
     const name = computeName(
@@ -398,9 +426,16 @@ function getLegendFormatter(config: ChartCardConfig, hass: HomeAssistant | undef
     if (!conf.series_in_graph[opts.seriesIndex].show.legend_value) {
       return [name];
     } else {
+	  const inLegend = conf.series_in_graph[opts.seriesIndex].show.in_legend;
+	  const offSet = conf.series_in_graph[opts.seriesIndex].offset;
+	  if (offSet && (inLegend === 'after_now' || inLegend === 'before_now')) {
+		let value = getLastValueBeforeNowWithOffset(opts.w.config.series[opts.seriesIndex].data, offSet)
+	  }
+	  else {
       let value = TIMESERIES_TYPES.includes(config.chart_type)
         ? opts.w.globals.series[opts.seriesIndex].slice(-1)[0]
         : opts.w.globals.series[opts.seriesIndex];
+	  }
       if (conf.series_in_graph[opts.seriesIndex]?.invert && value) {
         value = -value;
       }
