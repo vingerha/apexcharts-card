@@ -423,7 +423,7 @@ function getLegendFormatter(config: ChartCardConfig, hass: HomeAssistant | undef
 			const xs = opts.w.globals.seriesX[opts.seriesIndex]; // X values
 			const ys = opts.w.globals.series[opts.seriesIndex];  // Y values
 			const points: { x: number; y: number }[] = xs.map((xVal: number, i: number) => ({ x: xVal, y: ys[i],}));
-			value = getLastValueBeforeNowWithOffset(points)
+			value = getLastValueBeforeNow(points)
 		}
 		if (conf.series_in_graph[opts.seriesIndex]?.invert && value) {
 			value = -value;
