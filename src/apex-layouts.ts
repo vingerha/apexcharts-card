@@ -401,6 +401,7 @@ function applyOffset(ts: number, offsetStr?: string): number {
   return ts;
 }
 
+//note: the series have already been shifted so no need to apply a 2nd offset
 function getLastValueBeforeNowWithOffset(
   data: { x: number; y: number }[],
   offset?: string
@@ -411,11 +412,11 @@ function getLastValueBeforeNowWithOffset(
   for (const pt of data) {
 	console.warn('getLastValueBeforeNowWithOffset pt.x: ', pt.x);
 	console.warn('getLastValueBeforeNowWithOffset pt.y: ', pt.y);
-    const shifted = applyOffset(pt.x, offset);
-	console.warn('getLastValueBeforeNowWithOffset shifted: ', shifted);
-    if (shifted < now) {
+    // const shifted = applyOffset(pt.x, offset);
+	// console.warn('getLastValueBeforeNowWithOffset shifted: ', shifted);
+    if (pt.x < now) {
 		console.warn('getLastValueBeforeNowWithOffset now: ', now);
-		console.warn('getLastValueBeforeNowWithOffset shifted2: ', shifted);
+		//console.warn('getLastValueBeforeNowWithOffset shifted2: ', shifted);
 		lastVal = pt.y;
     } else {
       break;
