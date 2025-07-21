@@ -11,7 +11,7 @@ import {
   TIMESERIES_TYPES,
 } from './const';
 import { ChartCardConfig } from './types';
-import { computeName, computeUom, is12Hour, mergeDeep, myFormatNumber, prettyPrintTime, validateInterval, validateOffset } from './utils';
+import { computeName, computeUom, is12Hour, mergeDeep, myFormatNumber, prettyPrintTime} from './utils';
 import { layoutMinimal } from './layouts/minimal';
 import { getLocales, getDefaultLocale } from './locales';
 import GraphEntry from './graphEntry';
