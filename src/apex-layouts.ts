@@ -386,7 +386,7 @@ function getPlotOptions_radialBar(config: ChartCardConfig, hass: HomeAssistant |
 
 function applyOffset(ts: number, offsetStr?: string): number {
   console.warn('applyOffset ts: ', ts);
-  console.warn('applyOffset offsetStr: ', offsetStr);
+  
   if (!offsetStr) return ts;
   const match = offsetStr.match(/^(-?\d+)([smhd])$/);
   if (!match) return ts;
@@ -396,6 +396,7 @@ function applyOffset(ts: number, offsetStr?: string): number {
   console.warn('applyOffset amount: ', amount);
   console.warn('applyOffset unit: ', unit);
   console.warn('applyOffset ms: ', ms);
+  console.warn('applyOffset value: ', offsetStr);
   return ts + amount * ms;
 }
 
@@ -403,22 +404,24 @@ function getLastValueBeforeNowWithOffset(
   data: { x: number; y: number }[],
   offset?: string
 ): number | undefined {
-  console.warn('getLastValueBeforeNowWithOffset data: ', data);
   if (!offset) return undefined;
-  console.warn('getLastValueBeforeNowWithOffset offset: ', offset);
   const now = Date.now();
+  console.warn('getLastValueBeforeNowWithOffset now: ', now);
   let lastVal: number | undefined = undefined;
-  console.warn('getLastValueBeforeNowWithOffset lastVal: ', lastVal);
+
   for (const pt of data) {
 	console.warn('getLastValueBeforeNowWithOffset pt.x: ', pt.x);
 	console.warn('getLastValueBeforeNowWithOffset pt.y: ', pt.y);
     const shifted = applyOffset(pt.x, offset);
+	console.warn('getLastValueBeforeNowWithOffset shifted: ', shifted);
     if (shifted < now) {
-      lastVal = pt.y;
+		console.warn('getLastValueBeforeNowWithOffset shifted2: ', shifted);
+		lastVal = pt.y;
     } else {
       break;
     }
   }
+  console.warn('getLastValueBeforeNowWithOffset lastVal2: ', lastVal);
   return lastVal;
 }
 
@@ -438,7 +441,7 @@ function getLegendFormatter(config: ChartCardConfig, hass: HomeAssistant | undef
     } else {
 		const inLegend = conf.series_in_graph[opts.seriesIndex].show.in_legend;
 		const offSet = conf.series_in_graph[opts.seriesIndex].offset;
-		console.warn('getLegendFormatter offset: ', offSet);
+		// console.warn('getLegendFormatter offset: ', offSet);
 		let value = TIMESERIES_TYPES.includes(config.chart_type)
 			? opts.w.globals.series[opts.seriesIndex].slice(-1)[0]
 			: opts.w.globals.series[opts.seriesIndex];
@@ -448,7 +451,6 @@ function getLegendFormatter(config: ChartCardConfig, hass: HomeAssistant | undef
 			console.warn('getLegendFormatter xs: ', xs);
 			console.warn('getLegendFormatter ys: ', ys);		
 			const points: { x: number; y: number }[] = xs.map((xVal: number, i: number) => ({ x: xVal, y: ys[i],}));
-			console.warn('getLegendFormatter points: ', points);
 			value = getLastValueBeforeNowWithOffset(points, offSet)
 		}
 		if (conf.series_in_graph[opts.seriesIndex]?.invert && value) {
