@@ -418,7 +418,7 @@ function getLegendFormatter(config: ChartCardConfig, hass: HomeAssistant | undef
 		let value = TIMESERIES_TYPES.includes(config.chart_type)
 			? opts.w.globals.series[opts.seriesIndex].slice(-1)[0]
 			: opts.w.globals.series[opts.seriesIndex];
-		if (offSet && (inLegend === 'after_now' || inLegend === 'before_now')) {
+		if (inLegend === 'after_now' || inLegend === 'before_now') {
 			const xs = opts.w.globals.seriesX[opts.seriesIndex]; // X values
 			const ys = opts.w.globals.series[opts.seriesIndex];  // Y values
 			const points: { x: number; y: number }[] = xs.map((xVal: number, i: number) => ({ x: xVal, y: ys[i],}));
