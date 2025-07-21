@@ -1,3 +1,10 @@
+### [1.1.1-dev.8](https://github.com/vingerha/apexcharts-card/compare/v1.1.1-dev.7...v1.1.1-dev.8) (2025-07-21)
+
+
+### Bug Fixes
+
+* **l:** create listxy ([00755eb](https://github.com/vingerha/apexcharts-card/commit/00755eb09da1b2783558329a03cadb41f8f16fc0))
+
 ### [1.1.1-dev.7](https://github.com/vingerha/apexcharts-card/compare/v1.1.1-dev.6...v1.1.1-dev.7) (2025-07-21)
 
 
