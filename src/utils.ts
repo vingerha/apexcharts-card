@@ -124,13 +124,10 @@ export function validateInterval(interval: string, prefix: string): number {
   if (parsed === undefined) {
     throw new Error(`'${prefix}: ${interval}' is not a valid range of time`);
   }
-  console.warn('validateOffset parsed: ', parsed);
   return parsed;
 }
 
 export function validateOffset(interval: string, prefix: string): number {
-  console.warn('validateOffset interval: ', interval);
-  console.warn('validateOffset prefix: ', prefix);
   if (interval[0] !== '+' && interval[0] !== '-') {
     throw new Error(`'${prefix}: ${interval}' should start with a '+' or a '-'`);
   }

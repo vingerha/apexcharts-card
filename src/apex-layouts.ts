@@ -384,45 +384,20 @@ function getPlotOptions_radialBar(config: ChartCardConfig, hass: HomeAssistant |
   }
 }
 
-function applyOffset(ts: number, offsetStr?: string): number {
-  console.warn('applyOffset ts: ', ts);
-  
-  if (!offsetStr) return ts;
-  const match = offsetStr.match(/^(-?\d+)([smhd])$/);
-  if (!match) return ts;
-  const amount = parseInt(match[1], 10);
-  const unit = match[2];
-  const ms = { s: 1000, m: 60000, h: 3600000, d: 86400000 }[unit] || 0;
-  console.warn('applyOffset amount: ', amount);
-  console.warn('applyOffset unit: ', unit);
-  console.warn('applyOffset ms: ', ms);
-  console.warn('applyOffset value: ', ts + amount * ms);
-  // return ts + amount * ms;
-  return ts;
-}
-
 //note: the series have already been shifted so no need to apply a 2nd offset
-function getLastValueBeforeNowWithOffset(
-  data: { x: number; y: number }[],
-  offset?: string
+function getLastValueBeforeNow(
+  data: { x: number; y: number }[]
 ): number | undefined {
   if (!offset) return undefined;
   const now = Date.now();
   let lastVal: number | undefined = undefined;
   for (const pt of data) {
-	console.warn('getLastValueBeforeNowWithOffset pt.x: ', pt.x);
-	console.warn('getLastValueBeforeNowWithOffset pt.y: ', pt.y);
-    // const shifted = applyOffset(pt.x, offset);
-	// console.warn('getLastValueBeforeNowWithOffset shifted: ', shifted);
     if (pt.x < now) {
-		console.warn('getLastValueBeforeNowWithOffset now: ', now);
-		//console.warn('getLastValueBeforeNowWithOffset shifted2: ', shifted);
 		lastVal = pt.y;
     } else {
       break;
     }
   }
-  console.warn('getLastValueBeforeNowWithOffset lastVal2: ', lastVal);
   return lastVal;
 }
 
@@ -441,19 +416,14 @@ function getLegendFormatter(config: ChartCardConfig, hass: HomeAssistant | undef
       return [name];
     } else {
 		const inLegend = conf.series_in_graph[opts.seriesIndex].show.in_legend;
-		const offSet = conf.series_in_graph[opts.seriesIndex].offset;
-		// console.warn('getLegendFormatter offset: ', offSet);
 		let value = TIMESERIES_TYPES.includes(config.chart_type)
 			? opts.w.globals.series[opts.seriesIndex].slice(-1)[0]
 			: opts.w.globals.series[opts.seriesIndex];
 		if (offSet && (inLegend === 'after_now' || inLegend === 'before_now')) {
 			const xs = opts.w.globals.seriesX[opts.seriesIndex]; // X values
 			const ys = opts.w.globals.series[opts.seriesIndex];  // Y values
-			//console.warn('getLegendFormatter xs: ', xs);
-			//console.warn('getLegendFormatter ys: ', ys);		
 			const points: { x: number; y: number }[] = xs.map((xVal: number, i: number) => ({ x: xVal, y: ys[i],}));
-			value = getLastValueBeforeNowWithOffset(points, offSet)
-			console.warn('getLegendFormatter value returned: ', value);
+			value = getLastValueBeforeNowWithOffset(points)
 		}
 		if (conf.series_in_graph[opts.seriesIndex]?.invert && value) {
 			value = -value;
