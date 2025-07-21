@@ -1,3 +1,10 @@
+### [1.1.1-dev.2](https://github.com/vingerha/apexcharts-card/compare/v1.1.1-dev.1...v1.1.1-dev.2) (2025-07-21)
+
+
+### Bug Fixes
+
+* **legend:** typo2 ([5f48270](https://github.com/vingerha/apexcharts-card/commit/5f48270e14c4f9c65c506a6658905181162c5403))
+
 ### [1.1.1-dev.1](https://github.com/vingerha/apexcharts-card/compare/v1.1.0...v1.1.1-dev.1) (2025-07-21)
 
 
