@@ -426,33 +426,32 @@ function getLegendFormatter(config: ChartCardConfig, hass: HomeAssistant | undef
     if (!conf.series_in_graph[opts.seriesIndex].show.legend_value) {
       return [name];
     } else {
-	  const inLegend = conf.series_in_graph[opts.seriesIndex].show.in_legend;
-	  const offSet = conf.series_in_graph[opts.seriesIndex].offset;
-	  let value = TIMESERIES_TYPES.includes(config.chart_type)
-        ? opts.w.globals.series[opts.seriesIndex].slice(-1)[0]
-        : opts.w.globals.series[opts.seriesIndex];
-	  if (offSet && (inLegend === 'after_now' || inLegend === 'before_now')) {
+		const inLegend = conf.series_in_graph[opts.seriesIndex].show.in_legend;
+		const offSet = conf.series_in_graph[opts.seriesIndex].offset;
+		let value = TIMESERIES_TYPES.includes(config.chart_type)
+			? opts.w.globals.series[opts.seriesIndex].slice(-1)[0]
+			: opts.w.globals.series[opts.seriesIndex];
+		if (offSet && (inLegend === 'after_now' || inLegend === 'before_now')) {
 		value = getLastValueBeforeNowWithOffset(opts.w.config.series[opts.seriesIndex].data, offSet)
-	  } 
-      if (conf.series_in_graph[opts.seriesIndex]?.invert && value) {
-        value = -value;
-      }
-      if (!conf.series_in_graph[opts.seriesIndex]?.show.as_duration) {
-        value = myFormatNumber(value, hass2?.locale, conf.series_in_graph[opts.seriesIndex].float_precision);
-      }
-      const uom =
-        config.chart_type === 'radialBar'
-          ? '%'
-          : computeUom(
-              opts.seriesIndex,
-              conf.series_in_graph,
-              undefined,
-              hass2?.states[conf.series_in_graph[opts.seriesIndex].entity],
-            );
-      let valueString = '';
-      if (value === undefined || value === null) {
-        valueString = `<strong>${NO_VALUE} ${uom}</strong>`;
-      } else {
+		}
+		if (conf.series_in_graph[opts.seriesIndex]?.invert && value) {
+			value = -value;
+		}
+		if (!conf.series_in_graph[opts.seriesIndex]?.show.as_duration) {
+			value = myFormatNumber(value, hass2?.locale, conf.series_in_graph[opts.seriesIndex].float_precision);
+		}
+		const uom =
+		config.chart_type === 'radialBar'
+			? '%'
+			: computeUom(
+				opts.seriesIndex,
+				conf.series_in_graph,
+				hass2?.states[conf.series_in_graph[opts.seriesIndex].entity],
+			);
+		let valueString = '';
+		if (value === undefined || value === null) {
+			valueString = `<strong>${NO_VALUE} ${uom}</strong>`;
+		} else {
         if (conf.series_in_graph[opts.seriesIndex]?.show.as_duration) {
           valueString = `<strong>${prettyPrintTime(
             value,
