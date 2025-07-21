@@ -428,14 +428,12 @@ function getLegendFormatter(config: ChartCardConfig, hass: HomeAssistant | undef
     } else {
 	  const inLegend = conf.series_in_graph[opts.seriesIndex].show.in_legend;
 	  const offSet = conf.series_in_graph[opts.seriesIndex].offset;
-	  if (offSet && (inLegend === 'after_now' || inLegend === 'before_now')) {
-		let value = getLastValueBeforeNowWithOffset(opts.w.config.series[opts.seriesIndex].data, offSet)
-	  }
-	  else {
-      let value = TIMESERIES_TYPES.includes(config.chart_type)
+	  let value = TIMESERIES_TYPES.includes(config.chart_type)
         ? opts.w.globals.series[opts.seriesIndex].slice(-1)[0]
         : opts.w.globals.series[opts.seriesIndex];
-	  }
+	  if (offSet && (inLegend === 'after_now' || inLegend === 'before_now')) {
+		value = getLastValueBeforeNowWithOffset(opts.w.config.series[opts.seriesIndex].data, offSet)
+	  } 
       if (conf.series_in_graph[opts.seriesIndex]?.invert && value) {
         value = -value;
       }
