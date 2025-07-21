@@ -1,3 +1,10 @@
+### [1.1.1-dev.3](https://github.com/vingerha/apexcharts-card/compare/v1.1.1-dev.2...v1.1.1-dev.3) (2025-07-21)
+
+
+### Bug Fixes
+
+* **legend:** add console ([64d07d0](https://github.com/vingerha/apexcharts-card/commit/64d07d0c8206ed83f6a385dd84a0ca6a06be3a43))
+
 ### [1.1.1-dev.2](https://github.com/vingerha/apexcharts-card/compare/v1.1.1-dev.1...v1.1.1-dev.2) (2025-07-21)
 
 
