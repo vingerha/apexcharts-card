@@ -1,3 +1,10 @@
+### [1.1.1-dev.12](https://github.com/vingerha/apexcharts-card/compare/v1.1.1-dev.11...v1.1.1-dev.12) (2025-07-21)
+
+
+### Bug Fixes
+
+* **l:** kajs ([85c8486](https://github.com/vingerha/apexcharts-card/commit/85c8486c80e0440c041a17a40d7444ce5ec9be08))
+
 ### [1.1.1-dev.11](https://github.com/vingerha/apexcharts-card/compare/v1.1.1-dev.10...v1.1.1-dev.11) (2025-07-21)
 
 
