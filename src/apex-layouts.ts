@@ -433,7 +433,7 @@ function getLegendFormatter(config: ChartCardConfig, hass: HomeAssistant | undef
 			? opts.w.globals.series[opts.seriesIndex].slice(-1)[0]
 			: opts.w.globals.series[opts.seriesIndex];
 		if (offSet && (inLegend === 'after_now' || inLegend === 'before_now')) {
-			value = getLastValueBeforeNowWithOffset(opts.w.globals.series[opts.seriesIndex].data, offSet2)
+			value = getLastValueBeforeNowWithOffset(opts.w.globals.series[opts.seriesIndex].data, offSet)
 		}
 		if (conf.series_in_graph[opts.seriesIndex]?.invert && value) {
 			value = -value;
