@@ -11,7 +11,7 @@ import {
   TIMESERIES_TYPES,
 } from './const';
 import { ChartCardConfig } from './types';
-import { computeName, computeUom, is12Hour, mergeDeep, myFormatNumber, prettyPrintTime } from './utils';
+import { computeName, computeUom, is12Hour, mergeDeep, myFormatNumber, prettyPrintTime} from './utils';
 import { layoutMinimal } from './layouts/minimal';
 import { getLocales, getDefaultLocale } from './locales';
 import GraphEntry from './graphEntry';
@@ -384,6 +384,22 @@ function getPlotOptions_radialBar(config: ChartCardConfig, hass: HomeAssistant |
   }
 }
 
+//note: the series have already been shifted so no need to apply a 2nd offset
+function getLastValueBeforeNow(
+  data: { x: number; y: number }[]
+): number | undefined {
+  const now = Date.now();
+  let lastVal: number | undefined = undefined;
+  for (const pt of data) {
+    if (pt.x < now) {
+		lastVal = pt.y;
+    } else {
+      break;
+    }
+  }
+  return lastVal;
+}
+
 function getLegendFormatter(config: ChartCardConfig, hass: HomeAssistant | undefined) {
   return function (_, opts, conf = config, hass2 = hass) {
     const name = computeName(
@@ -398,28 +414,35 @@ function getLegendFormatter(config: ChartCardConfig, hass: HomeAssistant | undef
     if (!conf.series_in_graph[opts.seriesIndex].show.legend_value) {
       return [name];
     } else {
-      let value = TIMESERIES_TYPES.includes(config.chart_type)
-        ? opts.w.globals.series[opts.seriesIndex].slice(-1)[0]
-        : opts.w.globals.series[opts.seriesIndex];
-      if (conf.series_in_graph[opts.seriesIndex]?.invert && value) {
-        value = -value;
-      }
-      if (!conf.series_in_graph[opts.seriesIndex]?.show.as_duration) {
-        value = myFormatNumber(value, hass2?.locale, conf.series_in_graph[opts.seriesIndex].float_precision);
-      }
-      const uom =
-        config.chart_type === 'radialBar'
-          ? '%'
-          : computeUom(
-              opts.seriesIndex,
-              conf.series_in_graph,
-              undefined,
-              hass2?.states[conf.series_in_graph[opts.seriesIndex].entity],
-            );
-      let valueString = '';
-      if (value === undefined || value === null) {
-        valueString = `<strong>${NO_VALUE} ${uom}</strong>`;
-      } else {
+		const inLegend = conf.series_in_graph[opts.seriesIndex].show.in_legend;
+		let value = TIMESERIES_TYPES.includes(config.chart_type)
+			? opts.w.globals.series[opts.seriesIndex].slice(-1)[0]
+			: opts.w.globals.series[opts.seriesIndex];
+		if (inLegend === 'after_now' || inLegend === 'before_now') {
+			const xs = opts.w.globals.seriesX[opts.seriesIndex]; // X values
+			const ys = opts.w.globals.series[opts.seriesIndex];  // Y values
+			const points: { x: number; y: number }[] = xs.map((xVal: number, i: number) => ({ x: xVal, y: ys[i],}));
+			value = getLastValueBeforeNow(points)
+		}
+		if (conf.series_in_graph[opts.seriesIndex]?.invert && value) {
+			value = -value;
+		}
+		if (!conf.series_in_graph[opts.seriesIndex]?.show.as_duration) {
+			value = myFormatNumber(value, hass2?.locale, conf.series_in_graph[opts.seriesIndex].float_precision);
+		}
+		const uom =
+			config.chart_type === 'radialBar'
+				? '%'
+				: computeUom(
+					opts.seriesIndex,
+					conf.series_in_graph,
+					undefined,
+					hass2?.states[conf.series_in_graph[opts.seriesIndex].entity],
+					);
+		let valueString = '';
+		if (value === undefined || value === null) {
+			valueString = `<strong>${NO_VALUE} ${uom}</strong>`;
+		} else {
         if (conf.series_in_graph[opts.seriesIndex]?.show.as_duration) {
           valueString = `<strong>${prettyPrintTime(
             value,
