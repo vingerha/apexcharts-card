@@ -403,10 +403,14 @@ function getLastValueBeforeNowWithOffset(
   data: { x: number; y: number }[],
   offset?: string
 ): number | undefined {
+  console.warn('getLastValueBeforeNowWithOffset data: ', data);
   if (!offset) return undefined;
+  console.warn('getLastValueBeforeNowWithOffset offset: ', offset);
   const now = Date.now();
   let lastVal: number | undefined = undefined;
+  console.warn('getLastValueBeforeNowWithOffset lastval: ', lastval);
   for (const pt of data) {
+	console.warn('getLastValueBeforeNowWithOffset pt: ', pt);
     const shifted = applyOffset(pt.x, offset);
     if (shifted < now) {
       lastVal = pt.y;
