@@ -385,12 +385,17 @@ function getPlotOptions_radialBar(config: ChartCardConfig, hass: HomeAssistant |
 }
 
 function applyOffset(ts: number, offsetStr?: string): number {
+  console.warn('applyOffset number: ', number);
+  console.warn('applyOffset offsetStr: ', offsetStr);
   if (!offsetStr) return ts;
   const match = offsetStr.match(/^(-?\d+)([smhd])$/);
   if (!match) return ts;
   const amount = parseInt(match[1], 10);
   const unit = match[2];
   const ms = { s: 1000, m: 60000, h: 3600000, d: 86400000 }[unit] || 0;
+  console.warn('applyOffset amount: ', amount);
+  console.warn('applyOffset unit: ', unit);
+  console.warn('applyOffset ms: ', ms);
   return ts + amount * ms;
 }
 
