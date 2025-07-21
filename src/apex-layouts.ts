@@ -396,7 +396,7 @@ function applyOffset(ts: number, offsetStr?: string): number {
   console.warn('applyOffset amount: ', amount);
   console.warn('applyOffset unit: ', unit);
   console.warn('applyOffset ms: ', ms);
-  console.warn('applyOffset value: ', offsetStr);
+  console.warn('applyOffset value: ', ts + amount * ms);
   return ts + amount * ms;
 }
 
@@ -406,15 +406,14 @@ function getLastValueBeforeNowWithOffset(
 ): number | undefined {
   if (!offset) return undefined;
   const now = Date.now();
-  console.warn('getLastValueBeforeNowWithOffset now: ', now);
   let lastVal: number | undefined = undefined;
-
   for (const pt of data) {
 	console.warn('getLastValueBeforeNowWithOffset pt.x: ', pt.x);
 	console.warn('getLastValueBeforeNowWithOffset pt.y: ', pt.y);
     const shifted = applyOffset(pt.x, offset);
 	console.warn('getLastValueBeforeNowWithOffset shifted: ', shifted);
     if (shifted < now) {
+		console.warn('getLastValueBeforeNowWithOffset now: ', now);
 		console.warn('getLastValueBeforeNowWithOffset shifted2: ', shifted);
 		lastVal = pt.y;
     } else {
