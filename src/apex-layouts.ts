@@ -397,7 +397,8 @@ function applyOffset(ts: number, offsetStr?: string): number {
   console.warn('applyOffset unit: ', unit);
   console.warn('applyOffset ms: ', ms);
   console.warn('applyOffset value: ', ts + amount * ms);
-  return ts + amount * ms;
+  // return ts + amount * ms;
+  return ts;
 }
 
 function getLastValueBeforeNowWithOffset(
