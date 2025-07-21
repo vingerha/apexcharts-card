@@ -432,7 +432,7 @@ function getLegendFormatter(config: ChartCardConfig, hass: HomeAssistant | undef
 			? opts.w.globals.series[opts.seriesIndex].slice(-1)[0]
 			: opts.w.globals.series[opts.seriesIndex];
 		if (offSet && (inLegend === 'after_now' || inLegend === 'before_now')) {
-		value = getLastValueBeforeNowWithOffset(opts.w.config.series[opts.seriesIndex].data, offSet)
+			value = getLastValueBeforeNowWithOffset(opts.w.globals.series[opts.seriesIndex].data, offSet)
 		}
 		if (conf.series_in_graph[opts.seriesIndex]?.invert && value) {
 			value = -value;
@@ -441,14 +441,14 @@ function getLegendFormatter(config: ChartCardConfig, hass: HomeAssistant | undef
 			value = myFormatNumber(value, hass2?.locale, conf.series_in_graph[opts.seriesIndex].float_precision);
 		}
 		const uom =
-		config.chart_type === 'radialBar'
-			? '%'
-			: computeUom(
-				opts.seriesIndex,
-				conf.series_in_graph,
-				undefined,
-				hass2?.states[conf.series_in_graph[opts.seriesIndex].entity],
-			);
+			config.chart_type === 'radialBar'
+				? '%'
+				: computeUom(
+					opts.seriesIndex,
+					conf.series_in_graph,
+					undefined,
+					hass2?.states[conf.series_in_graph[opts.seriesIndex].entity],
+					);
 		let valueString = '';
 		if (value === undefined || value === null) {
 			valueString = `<strong>${NO_VALUE} ${uom}</strong>`;
