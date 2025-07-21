@@ -427,11 +427,10 @@ function getLegendFormatter(config: ChartCardConfig, hass: HomeAssistant | undef
       return [name];
     } else {
 		const inLegend = conf.series_in_graph[opts.seriesIndex].show.in_legend;
-		const offSet = conf.series_in_graph[opts.seriesIndex].offset;
+		let offSet = conf.series_in_graph[opts.seriesIndex].offset;
 		console.warn('getLegendFormatter offset: ', offSet);
 		offSet = parse(Offset)
 		console.warn('getLegendFormatter offset2: ', offSet);
-		offSet = parse(Offset)
 		let value = TIMESERIES_TYPES.includes(config.chart_type)
 			? opts.w.globals.series[opts.seriesIndex].slice(-1)[0]
 			: opts.w.globals.series[opts.seriesIndex];
