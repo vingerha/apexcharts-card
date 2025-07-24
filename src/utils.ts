@@ -323,14 +323,14 @@ export function myFormatNumber(
     }
   }
   
-  let precision === undefined ? DEFAULT_FLOAT_PRECISION : precision
+  let effectivePrecision = precision === undefined ? DEFAULT_FLOAT_PRECISION : precision;
   
   let fValue = formatNumber(lValue, localeOptions, {
-    maximumFractionDigits: precision,
+    maximumFractionDigits: effectivePrecision,
   });
 
   // Post-process in order to add trailing zeros, the formatNumber uses Intl.NumberFormat but not with mindigits, option to include in this function in this repo tbd.
-  if (precision > 0) {
+  if (effectivePrecision > 0) {
     const decimalSep = Intl.NumberFormat(localeOptions?.language ?? navigator.language)
       .format(1.1)
       .charAt(1); // e.g. '.' or ',' depending on locale
@@ -338,11 +338,11 @@ export function myFormatNumber(
     const parts = fValue.split(decimalSep);
     if (parts.length === 1) {
       // no fractional part at all
-      fValue = fValue + decimalSep + "0".repeat(precision);
+      fValue = fValue + decimalSep + "0".repeat(effectivePrecision);
     } else {
       // has some fractional digits already
       const frac = parts[1];
-      const missing = precision - frac.length;
+      const missing = effectivePrecision - frac.length;
       if (missing > 0) {
         fValue = fValue + "0".repeat(missing);
       }
