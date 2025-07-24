@@ -1,3 +1,11 @@
+## [1.3.0-dev.2](https://github.com/vingerha/apexcharts-card/compare/v1.3.0-dev.1...v1.3.0-dev.2) (2025-07-24)
+
+
+### Features
+
+* **format:** trailing zero's 3rd ([ea95372](https://github.com/vingerha/apexcharts-card/commit/ea95372c757bd3b12561e4e6cbe342c8b3409cb6))
+* **format:** trailing zero's attempt 2 ([ed5bbb0](https://github.com/vingerha/apexcharts-card/commit/ed5bbb04e8c73ee05b990dbfd378644590d3decc))
+
 ## [1.3.0-dev.1](https://github.com/vingerha/apexcharts-card/compare/v1.2.0...v1.3.0-dev.1) (2025-07-24)
 
 
