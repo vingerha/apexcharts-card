@@ -324,6 +324,7 @@ export function myFormatNumber(
   }
   return formatNumber(lValue, localeOptions, {
     maximumFractionDigits: precision === undefined ? DEFAULT_FLOAT_PRECISION : precision,
+	minimumFractionDigits: precision === undefined ? DEFAULT_FLOAT_PRECISION : precision,
   });
 }
 
