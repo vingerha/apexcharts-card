@@ -351,7 +351,7 @@ export function myFormatNumber(
       // padEnd will add zeros until reaching desired precision		
       const paddedFrac = fracPart.padEnd(effectivePrecision, "0");
       formatted = intPart + decimalSep + paddedFrac;
-	  console.warn('formatted2: ', formatted)
+      console.warn('formatted2: ', formatted)
     }
   }
   console.warn('formatted3: ', formatted)
