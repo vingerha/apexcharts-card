@@ -1,3 +1,10 @@
+## [1.3.0-dev.4](https://github.com/vingerha/apexcharts-card/compare/v1.3.0-dev.3...v1.3.0-dev.4) (2025-07-24)
+
+
+### Bug Fixes
+
+* **format:** incorrect decimal sep ([45cc407](https://github.com/vingerha/apexcharts-card/commit/45cc407b4e92d1608246fa26a2e4618be825fca6))
+
 ## [1.3.0-dev.3](https://github.com/vingerha/apexcharts-card/compare/v1.3.0-dev.2...v1.3.0-dev.3) (2025-07-24)
 
 
