@@ -339,7 +339,7 @@ export function myFormatNumber(
   console.warn('formatted1: ', formatted)
   // Detect locale-specific decimal separator
   const decimalSep = Intl.NumberFormat(
-    localeOptions?.language ?? navigator.language
+    FrontendLocaleData
   )
     .format(1.1)
     .charAt(1); // "." or "," depending on locale
@@ -351,9 +351,10 @@ export function myFormatNumber(
       // padEnd will add zeros until reaching desired precision		
       const paddedFrac = fracPart.padEnd(effectivePrecision, "0");
       formatted = intPart + decimalSep + paddedFrac;
+	  console.warn('formatted2: ', formatted)
     }
   }
-  console.warn('formatted2: ', formatted)
+  console.warn('formatted3: ', formatted)
   return formatted;
 }
 
