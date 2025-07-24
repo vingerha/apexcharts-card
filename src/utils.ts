@@ -345,7 +345,8 @@ export function myFormatNumber(
     const lTest = new Intl.NumberFormat(
       localeOptions?.language ?? navigator.language
     ).format(1.1);
-    const decimalSepMatch = lTest.match(/[^\d\-]/);
+    const decimalSepMatch = lTest.match(/[^\d-]/);
+	console.warn("decimalSepMatch: ", decimalSepMatch);
     const decimalSep = decimalSepMatch ? decimalSepMatch[0] : '.';
     console.warn("decimalSep: ", decimalSep);
     const [intPart, fracPart = ""] = formatted.split(decimalSep);
