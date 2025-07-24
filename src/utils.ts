@@ -5,7 +5,7 @@ import { TinyColor } from '@ctrl/tinycolor';
 import parse from 'parse-duration';
 import { ChartCardExternalConfig, ChartCardPrettyTime, ChartCardSeriesExternalConfig } from './types-config';
 import { DEFAULT_FLOAT_PRECISION, DEFAULT_MAX, DEFAULT_MIN, moment, NO_VALUE } from './const';
-import { formatNumber, FrontendLocaleData, HomeAssistant } from 'custom-card-helpers';
+import { formatNumber, FrontendLocaleData, numberFormatToLocale, HomeAssistant } from 'custom-card-helpers';
 import { OverrideFrontendLocaleData } from './types-ha';
 
 export function compress(data: unknown): string {
@@ -328,7 +328,10 @@ export function myFormatNumber(
   } else {
     value = num;
   }
-
+  const locale = localeOptions
+    ? numberFormatToLocale(localeOptions)
+    : undefined;
+  console.warn("locale: ", locale);	
   // 🔹 Choose precision (fall back to DEFAULT_FLOAT_PRECISION)
   const effectivePrecision = precision ?? DEFAULT_FLOAT_PRECISION;
   console.warn("effectivePrecision", effectivePrecision);
@@ -342,9 +345,9 @@ export function myFormatNumber(
   // 🔹 Post-process to add trailing zeros
   if (effectivePrecision > 0) {
     // 👇 safer decimal separator detection
-	console.warn("localeOptions: ", localeOptions);
+
     const lTest = new Intl.NumberFormat(
-      localeOptions
+      locale
     ).format(1.1);
 	console.warn("lTest: ", lTest);
     const decimalSepMatch = lTest.match(/[^\d-]/);
