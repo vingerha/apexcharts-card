@@ -312,43 +312,48 @@ export function truncateFloat(
 export function myFormatNumber(
   num: string | number | null | undefined,
   localeOptions?: FrontendLocaleData,
-  precision?: number | DEFAULT_FLOAT_PRECISION,
+  precision?: number
 ): string | null {
-  let lValue: string | number | null | undefined = num;
-  if (lValue === undefined || lValue === null) return null;
-  if (typeof lValue === 'string') {
-    lValue = parseFloat(lValue);
-    if (Number.isNaN(lValue)) {
-      return num as string;
+  // Early return for null/undefined
+  if (num === null || num === undefined) return null;
+
+  // Parse string inputs into numbers
+  let value: number;
+  if (typeof num === "string") {
+    value = parseFloat(num);
+    if (Number.isNaN(value)) {
+      // Not a valid number string; return it unchanged
+      return num;
     }
+  } else {
+    value = num;
   }
-  
-  const effectivePrecision = precision === undefined ? DEFAULT_FLOAT_PRECISION : precision;
-  
-  let fValue = formatNumber(lValue, localeOptions, {
+
+  // Decide how many digits to show
+  const effectivePrecision = precision ?? DEFAULT_FLOAT_PRECISION;
+
+  // Get the formatted number (this will strip trailing zeros)
+  let formatted = formatNumber(value, localeOptions, {
     maximumFractionDigits: effectivePrecision,
   });
 
-  // Post-process in order to add trailing zeros, the formatNumber uses Intl.NumberFormat but not with mindigits, option to include in this function in this repo tbd.
-  if (effectivePrecision > 0) {
-    const decimalSep = Intl.NumberFormat(localeOptions?.language ?? navigator.language)
-      .format(1.1)
-      .charAt(1); // e.g. '.' or ',' depending on locale
+  // Detect locale-specific decimal separator
+  const decimalSep = Intl.NumberFormat(
+    localeOptions?.language ?? navigator.language
+  )
+    .format(1.1)
+    .charAt(1); // "." or "," depending on locale
 
-    const parts = fValue.split(decimalSep);
-    if (parts.length === 1) {
-      // no fractional part at all
-      fValue = fValue + decimalSep + "0".repeat(effectivePrecision);
-    } else {
-      // has some fractional digits already
-      const frac = parts[1];
-      const missing = effectivePrecision - frac.length;
-      if (missing > 0) {
-        fValue = fValue + "0".repeat(missing);
-      }
+  // Post-process to add trailing zeros if needed
+  if (effectivePrecision > 0) {
+    const [intPart, fracPart = ""] = formatted.split(decimalSep);
+    if (fracPart.length < effectivePrecision) {
+      // padEnd will add zeros until reaching desired precision		
+      const paddedFrac = fracPart.padEnd(effectivePrecision, "0");
+      formatted = intPart + decimalSep + paddedFrac;
     }
   }
-  return fValue;
+  return formatted;
 }
 
 export function computeTimezoneDiffWithLocal(timezone: string | undefined): number {
