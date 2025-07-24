@@ -342,9 +342,11 @@ export function myFormatNumber(
   // 🔹 Post-process to add trailing zeros
   if (effectivePrecision > 0) {
     // 👇 safer decimal separator detection
+	console.warn("localeOptions: ", localeOptions);
     const lTest = new Intl.NumberFormat(
-      localeOptions?.language ?? navigator.language
+      localeOptions
     ).format(1.1);
+	console.warn("lTest: ", lTest);
     const decimalSepMatch = lTest.match(/[^\d-]/);
 	console.warn("decimalSepMatch: ", decimalSepMatch);
     const decimalSep = decimalSepMatch ? decimalSepMatch[0] : '.';
