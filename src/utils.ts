@@ -312,55 +312,35 @@ export function truncateFloat(
 export function myFormatNumber(
   num: string | number | null | undefined,
   localeOptions?: FrontendLocaleData,
-  precision?: number
+  precision?: number,
 ): string | null {
-  // 🔹 Early return for null/undefined
-  if (num === null || num === undefined) return null;
+  // Early return for null/undefined
+  if (num === null || num === undefined) {
+    return null;
+  }
 
-  // 🔹 Normalize input to a number
   let value: number;
-  if (typeof num === "string") {
+  // Normalize input to a number
+  if (typeof num === 'string') {
     value = parseFloat(num);
+    // Return original string if it's not a valid number
     if (Number.isNaN(value)) {
-      // Not a valid number string, return as-is
       return num;
     }
   } else {
     value = num;
   }
-  const locale = localeOptions
-    ? numberFormatToLocale(localeOptions)
-    : undefined;
-  console.warn("locale: ", locale);	
-  // 🔹 Choose precision (fall back to DEFAULT_FLOAT_PRECISION)
+
+  //Determine the number of decimal places
   const effectivePrecision = precision ?? DEFAULT_FLOAT_PRECISION;
-  console.warn("effectivePrecision", effectivePrecision);
 
-  // 🔹 Format using the helper (will strip trailing zeros)
-  let formatted = formatNumber(value, localeOptions, {
-    maximumFractionDigits: effectivePrecision,
-  });
-  console.warn("formatted", formatted);
+  //Convert the number to a string with a fixed number of decimal places
+  const fixedPrecisionValue = value.toFixed(effectivePrecision);
 
-  // 🔹 Post-process to add trailing zeros
-  if (effectivePrecision > 0) {
-    // 👇 safer decimal separator detection
-
-    const lTest = new Intl.NumberFormat(
-      locale
-    ).format(1.1);
-	console.warn("lTest: ", lTest);
-    const decimalSepMatch = lTest.match(/[^\d-]/);
-	console.warn("decimalSepMatch: ", decimalSepMatch);
-    const decimalSep = decimalSepMatch ? decimalSepMatch[0] : '.';
-    console.warn("decimalSep: ", decimalSep);
-    const [intPart, fracPart = ""] = formatted.split(decimalSep);
-    if (fracPart.length < effectivePrecision) {
-      formatted = intPart + decimalSep + fracPart.padEnd(effectivePrecision, "0");
-    }
-  }
-  console.warn("formatted3: ", formatted);
-  return formatted;
+  //Use the `formatNumber` helper for locale-specific formatting
+  // This will respect the locale's decimal and thousands separators
+  // while preserving the trailing zeros from `toFixed`.
+  return formatNumber(fixedPrecisionValue, localeOptions);
 }
 
 
