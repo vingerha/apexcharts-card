@@ -312,7 +312,7 @@ export function truncateFloat(
 export function myFormatNumber(
   num: string | number | null | undefined,
   localeOptions?: FrontendLocaleData,
-  precision?: number | typeof DEFAULT_FLOAT_PRECISION,
+  precision?: number | DEFAULT_FLOAT_PRECISION,
 ): string | null {
   let lValue: string | number | null | undefined = num;
   if (lValue === undefined || lValue === null) return null;
@@ -323,6 +323,7 @@ export function myFormatNumber(
     }
   }
   
+  let precision === undefined ? DEFAULT_FLOAT_PRECISION : precision)
   
   let fValue = formatNumber(lValue, localeOptions, {
     maximumFractionDigits: precision,
