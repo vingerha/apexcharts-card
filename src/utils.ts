@@ -329,7 +329,7 @@ export function myFormatNumber(
   });
 
   // Post-process in order to add trailing zeros, the formatNumber uses Intl.NumberFormat but not with mindigits, option to include in this function in this repo tbd.
-  if (precision > 0) {
+  if ((precision === undefined ? DEFAULT_FLOAT_PRECISION : precision) > 0) {
     const decimalSep = Intl.NumberFormat(localeOptions?.language ?? navigator.language)
       .format(1.1)
       .charAt(1); // e.g. '.' or ',' depending on locale
