@@ -339,7 +339,7 @@ export function myFormatNumber(
   console.warn('formatted1: ', formatted)
   // Detect locale-specific decimal separator
   const decimalSep = Intl.NumberFormat(
-    FrontendLocaleData
+    localeOptions
   )
     .format(1.1)
     .charAt(1); // "." or "," depending on locale
