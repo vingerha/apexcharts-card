@@ -1,3 +1,10 @@
+## [1.3.0-dev.5](https://github.com/vingerha/apexcharts-card/compare/v1.3.0-dev.4...v1.3.0-dev.5) (2025-07-24)
+
+
+### Bug Fixes
+
+* **format:** etc ([155fcb4](https://github.com/vingerha/apexcharts-card/commit/155fcb45f562356ecbe85744b2f14299c746f818))
+
 ## [1.3.0-dev.4](https://github.com/vingerha/apexcharts-card/compare/v1.3.0-dev.3...v1.3.0-dev.4) (2025-07-24)
 
 
