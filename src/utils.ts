@@ -322,10 +322,32 @@ export function myFormatNumber(
       return num as string;
     }
   }
-  return formatNumber(lValue, localeOptions, {
+  
+  
+  let fValue = formatNumber(lValue, localeOptions, {
     maximumFractionDigits: precision === undefined ? DEFAULT_FLOAT_PRECISION : precision,
-	minimumFractionDigits: precision === undefined ? DEFAULT_FLOAT_PRECISION : precision,
   });
+
+  // Post-process in order to add trailing zeros, the formatNumber uses Intl.NumberFormat but not with mindigits, option to include in this function in this repo tbd.
+  if (precision > 0) {
+    const decimalSep = Intl.NumberFormat(localeOptions?.language ?? navigator.language)
+      .format(1.1)
+      .charAt(1); // e.g. '.' or ',' depending on locale
+
+    const parts = fValue.split(decimalSep);
+    if (parts.length === 1) {
+      // no fractional part at all
+      fValue = fValue + decimalSep + "0".repeat(precision);
+    } else {
+      // has some fractional digits already
+      const frac = parts[1];
+      const missing = precision - frac.length;
+      if (missing > 0) {
+        fValue = fValue + "0".repeat(missing);
+      }
+    }
+  }
+  return fValue;
 }
 
 export function computeTimezoneDiffWithLocal(timezone: string | undefined): number {
