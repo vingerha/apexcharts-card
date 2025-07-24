@@ -312,7 +312,7 @@ export function truncateFloat(
 export function myFormatNumber(
   num: string | number | null | undefined,
   localeOptions?: FrontendLocaleData,
-  precision?: number | undefined,
+  precision?: number | DEFAULT_FLOAT_PRECISION,
 ): string | null {
   let lValue: string | number | null | undefined = num;
   if (lValue === undefined || lValue === null) return null;
@@ -325,11 +325,11 @@ export function myFormatNumber(
   
   
   let fValue = formatNumber(lValue, localeOptions, {
-    maximumFractionDigits: precision === undefined ? DEFAULT_FLOAT_PRECISION : precision,
+    maximumFractionDigits: precision,
   });
 
   // Post-process in order to add trailing zeros, the formatNumber uses Intl.NumberFormat but not with mindigits, option to include in this function in this repo tbd.
-  if ((precision === undefined ? DEFAULT_FLOAT_PRECISION : precision) > 0) {
+  if (precision > 0) {
     const decimalSep = Intl.NumberFormat(localeOptions?.language ?? navigator.language)
       .format(1.1)
       .charAt(1); // e.g. '.' or ',' depending on locale
