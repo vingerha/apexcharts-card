@@ -331,19 +331,19 @@ export function myFormatNumber(
 
   // Decide how many digits to show
   const effectivePrecision = precision ?? DEFAULT_FLOAT_PRECISION;
-
+  console.warn('effectivePrecision: ',effectivePrecision)
   // Get the formatted number (this will strip trailing zeros)
   let formatted = formatNumber(value, localeOptions, {
     maximumFractionDigits: effectivePrecision,
   });
-
+  console.warn('formatted1: ', formatted)
   // Detect locale-specific decimal separator
   const decimalSep = Intl.NumberFormat(
     localeOptions?.language ?? navigator.language
   )
     .format(1.1)
     .charAt(1); // "." or "," depending on locale
-
+  console.warn('decimalSep: ', decimalSep)
   // Post-process to add trailing zeros if needed
   if (effectivePrecision > 0) {
     const [intPart, fracPart = ""] = formatted.split(decimalSep);
@@ -353,6 +353,7 @@ export function myFormatNumber(
       formatted = intPart + decimalSep + paddedFrac;
     }
   }
+  console.warn('formatted2: ', formatted)
   return formatted;
 }
 
