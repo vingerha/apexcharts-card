@@ -323,7 +323,7 @@ export function myFormatNumber(
     }
   }
   
-  let precision === undefined ? DEFAULT_FLOAT_PRECISION : precision)
+  let precision === undefined ? DEFAULT_FLOAT_PRECISION : precision
   
   let fValue = formatNumber(lValue, localeOptions, {
     maximumFractionDigits: precision,
