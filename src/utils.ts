@@ -314,51 +314,50 @@ export function myFormatNumber(
   localeOptions?: FrontendLocaleData,
   precision?: number
 ): string | null {
-  // Early return for null/undefined
+  // 🔹 Early return for null/undefined
   if (num === null || num === undefined) return null;
 
-  // Parse string inputs into numbers
+  // 🔹 Normalize input to a number
   let value: number;
   if (typeof num === "string") {
     value = parseFloat(num);
     if (Number.isNaN(value)) {
-      // Not a valid number string; return it unchanged
+      // Not a valid number string, return as-is
       return num;
     }
   } else {
     value = num;
   }
-  const locale = localeOptions
-    ? numberFormatToLocale(localeOptions)
-    : undefined;
-  // Decide how many digits to show
+
+  // 🔹 Choose precision (fall back to DEFAULT_FLOAT_PRECISION)
   const effectivePrecision = precision ?? DEFAULT_FLOAT_PRECISION;
-  console.warn('effectivePrecision: ',effectivePrecision)
-  // Get the formatted number (this will strip trailing zeros)
-  let formatted = formatNumber(value, locale, {
+  console.warn("effectivePrecision", effectivePrecision);
+
+  // 🔹 Format using the helper (will strip trailing zeros)
+  let formatted = formatNumber(value, localeOptions, {
     maximumFractionDigits: effectivePrecision,
   });
-  console.warn('formatted1: ', formatted)
-  // Detect locale-specific decimal separator
-  const decimalSep = Intl.NumberFormat(
-    locale
-  )
-    .format(1.1)
-    .charAt(1); // "." or "," depending on locale
-  console.warn('decimalSep: ', decimalSep)
-  // Post-process to add trailing zeros if needed
+  console.warn("formatted", formatted);
+
+  // 🔹 Post-process to add trailing zeros
   if (effectivePrecision > 0) {
+    // 👇 safer decimal separator detection
+    const lTest = new Intl.NumberFormat(
+      localeOptions?.language ?? navigator.language
+    ).format(1.1);
+    const decimalSepMatch = lTest.match(/[^\d\-]/);
+    const decimalSep = decimalSepMatch ? decimalSepMatch[0] : '.';
+    console.warn("decimalSep: ", decimalSep);
     const [intPart, fracPart = ""] = formatted.split(decimalSep);
     if (fracPart.length < effectivePrecision) {
-      // padEnd will add zeros until reaching desired precision		
-      const paddedFrac = fracPart.padEnd(effectivePrecision, "0");
-      formatted = intPart + decimalSep + paddedFrac;
-      console.warn('formatted2: ', formatted)
+      formatted = intPart + decimalSep + fracPart.padEnd(effectivePrecision, "0");
     }
   }
-  console.warn('formatted3: ', formatted)
+  console.warn("formatted3: ", formatted);
   return formatted;
 }
+
+
 
 export function computeTimezoneDiffWithLocal(timezone: string | undefined): number {
   if (!timezone) return 0;
