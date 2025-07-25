@@ -6,6 +6,6 @@ services:
       - ha-config:/config
       - ..:/workspace:cached
     ports:
-      - 9123:8123
+      - 8123:8123
 volumes:
   ha-config:
