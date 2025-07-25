@@ -1,7 +1,6 @@
 {
   "name": "ApexCharts-card Development",
-  "dockerComposeFile": ["docker-compose.yml"],
-  "image": "ghcr.io/ludeeus/devcontainer/generic:stable",
+  "image": "ghcr.io/home-assistant/home-assistant:stable",
   "context": "..",
   "remoteUser": "vscode",
   "appPort": ["8123:8123", "5000:5000"],
