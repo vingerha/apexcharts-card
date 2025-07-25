@@ -1,0 +1,11 @@
+version: '3.4'
+services:
+  homeassistant:
+    image: ghcr.io/home-assistant/home-assistant:stable
+    volumes:
+      - ha-config:/config
+      - ..:/workspace:cached
+    ports:
+      - 9123:8123
+volumes:
+  ha-config:
