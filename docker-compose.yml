@@ -1,0 +1,14 @@
+version: '3.4'
+services:
+  homeassistant:
+    container_name: homeassistant-dev
+    image: ghcr.io/home-assistant/home-assistant:stable
+    volumes:
+      # A persistent volume for HA config
+      - ha-config:/config
+      # Mount your repo so HA can access /workspace
+      - .:/workspace:cached
+    ports:
+      - "8123:8123"
+volumes:
+  ha-config:
