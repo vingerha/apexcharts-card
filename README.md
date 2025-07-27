@@ -11,8 +11,7 @@
 **Created 19 July 2025 and in the process of cleaning, fixing, updating which may take quite a while as the basis was old-ish too :)**
 
 **Disclaimer**: 
-I am not a seasoned developer and the card itself is quite technical as well, which adds challenges to my lack of development skills. As a result I cannot commit to fixing issues.
-I applied a few PR/issues noted from the source/RomRider and **I can accept PR's if they have been thoroughly tested**
+I am not a seasoned developer and the card itself is quite technical as well, which adds challenges to my lack of development skills. As a result I cannot commit to spending time to fix issues that are reasonable i.e. no worarounds found. Added to that I asked to add a few PR/issues noted from the source/RomRider and **I can accept PR's if they have been thoroughly tested**
 
 ## Documentation
 
