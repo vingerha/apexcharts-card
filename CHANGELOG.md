@@ -1,3 +1,10 @@
+## [1.3.0-dev.7](https://github.com/vingerha/apexcharts-card/compare/v1.3.0-dev.6...v1.3.0-dev.7) (2025-07-27)
+
+
+### Bug Fixes
+
+* **annotations:** fix pointannotations ([ba0ab92](https://github.com/vingerha/apexcharts-card/commit/ba0ab9213ca86015173c1ccf9d0807a25aa4cd5c))
+
 ## [1.3.0-dev.6](https://github.com/vingerha/apexcharts-card/compare/v1.3.0-dev.5...v1.3.0-dev.6) (2025-07-24)
 
 
