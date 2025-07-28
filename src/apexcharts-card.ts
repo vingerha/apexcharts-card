@@ -748,7 +748,7 @@ class ChartsCard extends LitElement {
                       ? prettyPrintTime(this._headerState?.[index], serie.show.as_duration)
                       : this._computeLastState(this._headerState?.[index], index) || NO_VALUE}</span
                   >
-                  ${!serie.show.as_duration && serie.show.unit
+                  ${!serie.show.as_duration && (serie.show.unit === undefined || (serie.show.unit !== false && serie.show.unit !== 'before_value'))
                     ? html`<span id="uom">${computeUom(index, this._config?.series, this._entities)}</span>`
                     : ''}
                 </div>
