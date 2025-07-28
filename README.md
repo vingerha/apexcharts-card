@@ -8,10 +8,10 @@
 
 ## This is a copy of the ApexCharts Card by [@RomRider](https://github.com/RomRider) as the original repo seems no longer supported since mid 2024 <!-- omit in toc -->
 
-**Created 19 July 2025 and in the process of cleaning, fixing, updating which may take quite a while as the basis was old-ish too :)**
+**Created July 2025 and whilst this is still there: in the process of cleaning, fixing, updating which may take quite a while as the basis was old-ish too :)**
 
 **Disclaimer**: 
-I am not a seasoned developer and the card itself is quite technical as well, which adds challenges to my lack of development skills. As a result I will still try spending time to fix issues that are reasonable i.e. major and/or no workarounds found. Added to that I asked to add a few PR/issues noted from the source/RomRider and **I can accept PR's if they have been thoroughly tested**
+I am not a seasoned frontend developer. The card itself is quite technical as well as its librayr apexcharts.js, which adds challenges to my lack of development skills. As a result I am OK to spend time to fix issues that are multi-user impacting i.e. major and/or no workarounds found. **I appreciate PR's that are thoroughly tested, do contact me up front so I can be prepared :)**
 
 ## Documentation
 
