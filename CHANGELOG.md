@@ -1,3 +1,24 @@
+## [1.3.0](https://github.com/vingerha/apexcharts-card/compare/v1.2.0...v1.3.0) (2025-07-28)
+
+
+### Features
+
+* **format:** allow trailing zeros attempt 1 ([a93a6a3](https://github.com/vingerha/apexcharts-card/commit/a93a6a3ed333e29daa9f722933165383aad132b9))
+* **format:** trailing zero's 3rd ([ea95372](https://github.com/vingerha/apexcharts-card/commit/ea95372c757bd3b12561e4e6cbe342c8b3409cb6))
+* **format:** trailing zero's attempt 2 ([ed5bbb0](https://github.com/vingerha/apexcharts-card/commit/ed5bbb04e8c73ee05b990dbfd378644590d3decc))
+
+
+### Bug Fixes
+
+* **annotations:** fix pointannotations ([ba0ab92](https://github.com/vingerha/apexcharts-card/commit/ba0ab9213ca86015173c1ccf9d0807a25aa4cd5c))
+* **format:** etc ([155fcb4](https://github.com/vingerha/apexcharts-card/commit/155fcb45f562356ecbe85744b2f14299c746f818))
+* **format:** incorrect decimal sep ([45cc407](https://github.com/vingerha/apexcharts-card/commit/45cc407b4e92d1608246fa26a2e4618be825fca6))
+* **format:** testing proposed code-change ([3514285](https://github.com/vingerha/apexcharts-card/commit/35142850d6c78eca30ef85d71fbf878e8ae15219))
+* **layout:** change show-unit config ([e4e71c0](https://github.com/vingerha/apexcharts-card/commit/e4e71c0d344071805c26c410c5e36b89fb08a403))
+* **layout:** show unit before value ([806e541](https://github.com/vingerha/apexcharts-card/commit/806e54140b31c52c780b1d5acb9f5c118c3c01c2))
+* **layout:** show unit under proper conditions ([867ff29](https://github.com/vingerha/apexcharts-card/commit/867ff2940b8e6ef394696a1e4aaf9b6663b7d349))
+* **log:** add log ([ff5d5e4](https://github.com/vingerha/apexcharts-card/commit/ff5d5e40ba035f7c6b2125d4b053c8608b5a6eed))
+
 ## [1.3.0-dev.10](https://github.com/vingerha/apexcharts-card/compare/v1.3.0-dev.9...v1.3.0-dev.10) (2025-07-28)
 
 
