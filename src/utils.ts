@@ -5,7 +5,7 @@ import { TinyColor } from '@ctrl/tinycolor';
 import parse from 'parse-duration';
 import { ChartCardExternalConfig, ChartCardPrettyTime, ChartCardSeriesExternalConfig } from './types-config';
 import { DEFAULT_FLOAT_PRECISION, DEFAULT_MAX, DEFAULT_MIN, moment, NO_VALUE } from './const';
-import { formatNumber, FrontendLocaleData, HomeAssistant } from 'custom-card-helpers';
+import { formatNumber, FrontendLocaleData, numberFormatToLocale, HomeAssistant } from 'custom-card-helpers';
 import { OverrideFrontendLocaleData } from './types-ha';
 
 export function compress(data: unknown): string {
@@ -312,20 +312,38 @@ export function truncateFloat(
 export function myFormatNumber(
   num: string | number | null | undefined,
   localeOptions?: FrontendLocaleData,
-  precision?: number | undefined,
+  precision?: number,
 ): string | null {
-  let lValue: string | number | null | undefined = num;
-  if (lValue === undefined || lValue === null) return null;
-  if (typeof lValue === 'string') {
-    lValue = parseFloat(lValue);
-    if (Number.isNaN(lValue)) {
-      return num as string;
-    }
+  // Early return for null/undefined
+  if (num === null || num === undefined) {
+    return null;
   }
-  return formatNumber(lValue, localeOptions, {
-    maximumFractionDigits: precision === undefined ? DEFAULT_FLOAT_PRECISION : precision,
-  });
+
+  let value: number;
+  // Normalize input to a number
+  if (typeof num === 'string') {
+    value = parseFloat(num);
+    // Return original string if it's not a valid number
+    if (Number.isNaN(value)) {
+      return num;
+    }
+  } else {
+    value = num;
+  }
+
+  //Determine the number of decimal places
+  const effectivePrecision = precision ?? DEFAULT_FLOAT_PRECISION;
+
+  //Convert the number to a string with a fixed number of decimal places
+  const fixedPrecisionValue = value.toFixed(effectivePrecision);
+
+  //Use the `formatNumber` helper for locale-specific formatting
+  // This will respect the locale's decimal and thousands separators
+  // while preserving the trailing zeros from `toFixed`.
+  return formatNumber(fixedPrecisionValue, localeOptions);
 }
+
+
 
 export function computeTimezoneDiffWithLocal(timezone: string | undefined): number {
   if (!timezone) return 0;

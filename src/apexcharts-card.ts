@@ -45,7 +45,7 @@ import {
   isUsingServerTimezone,
   computeTimezoneDiffWithLocal,
 } from './utils';
-import ApexCharts from 'apexcharts';
+import ApexCharts, { ApexOptions} from 'apexcharts/dist/apexcharts.esm.js';
 import { Ripple } from '@material/mwc-ripple';
 import { stylesApex } from './styles';
 import { HassEntity } from 'home-assistant-js-websocket';
@@ -65,6 +65,7 @@ import {
   DEFAULT_FLOAT_PRECISION,
   DEFAULT_SHOW_IN_CHART,
   DEFAULT_SHOW_IN_HEADER,
+  DEFAULT_SHOW_UNIT,
   DEFAULT_SHOW_IN_LEGEND,
   DEFAULT_SHOW_LEGEND_VALUE,
   DEFAULT_SHOW_NAME_IN_HEADER,
@@ -177,7 +178,7 @@ class ChartsCard extends LitElement {
   @property({ attribute: false }) _lastUpdated: Date = new Date();
 
   @property({ type: Boolean }) private _warning = false;
-
+  
   public connectedCallback() {
     super.connectedCallback();
     if (this._config && this._hass && !this._loaded) {
@@ -412,6 +413,7 @@ class ChartsCard extends LitElement {
               in_legend: DEFAULT_SHOW_IN_LEGEND,
               legend_value: DEFAULT_SHOW_LEGEND_VALUE,
               in_header: DEFAULT_SHOW_IN_HEADER,
+              unit: DEFAULT_SHOW_UNIT,
               in_chart: DEFAULT_SHOW_IN_CHART,
               name_in_header: DEFAULT_SHOW_NAME_IN_HEADER,
               offset_in_name: DEFAULT_SHOW_OFFSET_IN_NAME,
@@ -736,6 +738,9 @@ class ChartsCard extends LitElement {
                 }}"
               >
                 <div id="state__value">
+                  ${serie.show.unit === 'before_value'
+                    ? html`<span id="uom">${computeUom(index, this._config?.series, this._entities)}</span>`
+                    : ''}
                   <span id="state" style="${this._computeHeaderStateColor(serie, this._headerState?.[index])}"
                     >${this._headerState?.[index] === 0
                       ? 0
@@ -743,7 +748,7 @@ class ChartsCard extends LitElement {
                       ? prettyPrintTime(this._headerState?.[index], serie.show.as_duration)
                       : this._computeLastState(this._headerState?.[index], index) || NO_VALUE}</span
                   >
-                  ${!serie.show.as_duration
+                  ${!serie.show.as_duration && (serie.show.unit === undefined || (serie.show.unit !== false && serie.show.unit !== 'before_value'))
                     ? html`<span id="uom">${computeUom(index, this._config?.series, this._entities)}</span>`
                     : ''}
                 </div>
@@ -784,7 +789,29 @@ class ChartsCard extends LitElement {
         (layout as any).chart.id = Math.random().toString(36).substring(7);
       }
       this._apexChart = new ApexCharts(graph, layout);
+      const ann: any =
+        (this._apexChart as any).annotations
+          ?? Object.values(this._apexChart as any)
+              .find((v: unknown) => v && typeof (v as any).addPointAnnotation === 'function');
+      if (ann && !ann.addPointAnnotationExternal) {
+        ann.addPointAnnotationExternal = ann.addPointAnnotation.bind(ann);
+      }
+      
       this._apexChart.render();
+      
+      const waitForPointLayer = (cb: () => void) => {
+        const poll = () =>
+          this._apexChart!.el!.querySelector('.apexcharts-point-annotations')
+            ? cb()
+            : requestAnimationFrame(poll);
+        poll();
+      };
+      waitForPointLayer(() => {
+        const opts = layout as ApexOptions;
+        const pts = opts.annotations?.points ?? [];
+        pts.forEach(p => this._apexChart!.addPointAnnotationExternal(p, true));
+      });
+ 
       if (this._config.series_in_brush.length) {
         const brush = this.shadowRoot.querySelector('#brush');
         this._apexBrush = new ApexCharts(
