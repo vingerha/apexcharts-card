@@ -116,7 +116,7 @@ export const ChartCardSeriesShowConfigExt = t.iface([], {
   "in_legend": t.opt(t.union("boolean", t.lit('raw'), t.lit('before_now'), t.lit('after_now'))),
   "legend_value": t.opt("boolean"),
   "in_header": t.opt(t.union("boolean", t.lit('raw'), t.lit('before_now'), t.lit('after_now'))),
-  "unit_in_front": t.opt("boolean"),
+  "unit": t.opt(t.union("boolean", t.lit('before_value'))),
   "name_in_header": t.opt("boolean"),
   "header_color_threshold": t.opt("boolean"),
   "in_chart": t.opt("boolean"),
