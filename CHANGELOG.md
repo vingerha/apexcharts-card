@@ -1,3 +1,10 @@
+## [1.3.0-dev.10](https://github.com/vingerha/apexcharts-card/compare/v1.3.0-dev.9...v1.3.0-dev.10) (2025-07-28)
+
+
+### Bug Fixes
+
+* **layout:** show unit under proper conditions ([867ff29](https://github.com/vingerha/apexcharts-card/commit/867ff2940b8e6ef394696a1e4aaf9b6663b7d349))
+
 ## [1.3.0-dev.9](https://github.com/vingerha/apexcharts-card/compare/v1.3.0-dev.8...v1.3.0-dev.9) (2025-07-28)
 
 
