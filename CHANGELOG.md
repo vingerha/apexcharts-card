@@ -1,3 +1,10 @@
+## [1.3.0-dev.9](https://github.com/vingerha/apexcharts-card/compare/v1.3.0-dev.8...v1.3.0-dev.9) (2025-07-28)
+
+
+### Bug Fixes
+
+* **layout:** change show-unit config ([e4e71c0](https://github.com/vingerha/apexcharts-card/commit/e4e71c0d344071805c26c410c5e36b89fb08a403))
+
 ## [1.3.0-dev.8](https://github.com/vingerha/apexcharts-card/compare/v1.3.0-dev.7...v1.3.0-dev.8) (2025-07-28)
 
 
