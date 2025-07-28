@@ -1073,3 +1073,7 @@ apex_config:
 series:
   - entity: sensor.temperature
 ```
+
+# Thanks and appreciations:
+First and foremost to @romrider who created this card and maintained it for many years. My follow-up support is only feasible due to this.
+
