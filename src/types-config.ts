@@ -119,6 +119,7 @@ export interface ChartCardSeriesShowConfigExt {
   in_legend?: boolean | 'raw' | 'before_now' | 'after_now';
   legend_value?: boolean;
   in_header?: boolean | 'raw' | 'before_now' | 'after_now';
+  unit_in_front?: boolean;
   name_in_header?: boolean;
   header_color_threshold?: boolean;
   in_chart?: boolean;

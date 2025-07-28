@@ -65,6 +65,7 @@ import {
   DEFAULT_FLOAT_PRECISION,
   DEFAULT_SHOW_IN_CHART,
   DEFAULT_SHOW_IN_HEADER,
+  DEFAULT_SHOW_UNIT_IN_FRONT,
   DEFAULT_SHOW_IN_LEGEND,
   DEFAULT_SHOW_LEGEND_VALUE,
   DEFAULT_SHOW_NAME_IN_HEADER,
@@ -412,6 +413,7 @@ class ChartsCard extends LitElement {
               in_legend: DEFAULT_SHOW_IN_LEGEND,
               legend_value: DEFAULT_SHOW_LEGEND_VALUE,
               in_header: DEFAULT_SHOW_IN_HEADER,
+              unit_in_front: DEFAULT_SHOW_UNIT_IN_FRONT,
               in_chart: DEFAULT_SHOW_IN_CHART,
               name_in_header: DEFAULT_SHOW_NAME_IN_HEADER,
               offset_in_name: DEFAULT_SHOW_OFFSET_IN_NAME,
@@ -736,6 +738,9 @@ class ChartsCard extends LitElement {
                 }}"
               >
                 <div id="state__value">
+                  ${serie.show.unit_in_front
+                    ? html`<span id="uom">${computeUom(index, this._config?.series, this._entities)}</span>`
+                    : ''}
                   <span id="state" style="${this._computeHeaderStateColor(serie, this._headerState?.[index])}"
                     >${this._headerState?.[index] === 0
                       ? 0
@@ -743,7 +748,7 @@ class ChartsCard extends LitElement {
                       ? prettyPrintTime(this._headerState?.[index], serie.show.as_duration)
                       : this._computeLastState(this._headerState?.[index], index) || NO_VALUE}</span
                   >
-                  ${!serie.show.as_duration
+                  ${!serie.show.as_duration && !serie.show.unit_in_front
                     ? html`<span id="uom">${computeUom(index, this._config?.series, this._entities)}</span>`
                     : ''}
                 </div>
