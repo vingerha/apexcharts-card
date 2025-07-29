@@ -98,16 +98,6 @@ $ wget https://github.com/vingerha/apexcharts-card/releases/download/v1.3.0/ape
 
 3. Add the resource reference as decribed below.
 
-### Add resource reference
-
-If you configure Lovelace via YAML, add a reference to `apexcharts-card.js` inside your `configuration.yaml`:
-
-```yaml
-resources:
-  - url: /local/apexcharts-card.js?v=1.3.0
-    type: module
-```
-
 Else, if you prefer the graphical editor, use the menu to add the resource:
 
 1. Make sure, advanced mode is enabled in your user profile (click on your user name to get there)
