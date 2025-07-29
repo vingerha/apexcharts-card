@@ -11,7 +11,7 @@
 **Created July 2025 and until further notice: in the process of cleaning, fixing, updating which may take quite a while**
 
 **Disclaimer**: 
-I am not a seasoned frontend developer. The card itself is quite technical, adding challenges to mid-level development skills. As a result I am OK to spend time to fix issues that are multi-user impacting i.e. major and/or no workarounds found. **I appreciate PR's that are thoroughly tested, do contact me up front so I can be prepared :)**
+I am not a seasoned frontend developer. The card itself is quite technical, adding challenges to mid-level development skills. As a result I am OK to spend time trying (!) to fix issues that are multi-user impacting i.e. major bugs and/or cases without workarounds found. **I appreciate PR's that are thoroughly tested, do contact me up front so I can be prepared :)**
 
 ## Documentation
 
