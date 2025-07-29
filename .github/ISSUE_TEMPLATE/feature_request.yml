@@ -9,10 +9,15 @@ body:
     attributes:
       value: |
         Is your request really a feature or aiming to fix a bug, then raise a [BUG REPORT](https://github.com/vingerha/apexcharts-card/issues/new?assignees=&labels=bug%2Ctriage&projects=&template=bug_report.yml&title=%5BBug%5D%3A+)
-  - type: markdown
+  - type: checkboxes
+    id: checked-docu
     attributes:
-      value: |
-        IMPORTANT: I understand that this repo has been created mainly to support critical bugs, I understand that my request may not be implemented
+      label: Own Analysis
+      description: I have read the documentation which did not provide help, neither from the
+      options:
+        - label: I cannot find a workaround via the [HOME ASSISTANT ForuM](https://community.home-assistant.io/t/apexcharts-card-a-highly-customizable-graph-card/272877)
+          required: true
+        - label: I understand that this repo has been created mainly to support critical bugs, I understand that my request may not be implemented
   - type: textarea
     id: description
     attributes:
