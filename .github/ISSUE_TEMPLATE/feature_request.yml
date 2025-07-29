@@ -13,10 +13,8 @@ body:
     id: checked-docu
     attributes:
       label: Disclaimer
-      description: I cannot find a workaround via the [HOME ASSISTANT ForuM](https://community.home-assistant.io/t/apexcharts-card-a-highly-customizable-graph-card/272877)
+      description: I cannot find a workaround via the [HOME ASSISTANT FORUM](https://community.home-assistant.io/t/apexcharts-card-a-highly-customizable-graph-card/272877)
       options:
-        - label: I cannot find a workaround via the [HOME ASSISTANT ForuM](https://community.home-assistant.io/t/apexcharts-card-a-highly-customizable-graph-card/272877)
-          required: true
         - label: I understand that this repo has been created mainly to support critical bugs, I understand that my request may not be implemented
   - type: textarea
     id: description
