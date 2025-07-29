@@ -12,8 +12,8 @@ body:
   - type: checkboxes
     id: checked-docu
     attributes:
-      label: Own Analysis
-      description: I have read the documentation which did not provide help, neither from the
+      label: Disclaimer
+      description: I have done the pre-work before raising this
       options:
         - label: I cannot find a workaround via the [HOME ASSISTANT ForuM](https://community.home-assistant.io/t/apexcharts-card-a-highly-customizable-graph-card/272877)
           required: true
