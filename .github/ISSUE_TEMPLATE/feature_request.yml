@@ -13,7 +13,7 @@ body:
     id: checked-docu
     attributes:
       label: Disclaimer
-      description: I have done the pre-work before raising this
+      description: I cannot find a workaround via the [HOME ASSISTANT ForuM](https://community.home-assistant.io/t/apexcharts-card-a-highly-customizable-graph-card/272877)
       options:
         - label: I cannot find a workaround via the [HOME ASSISTANT ForuM](https://community.home-assistant.io/t/apexcharts-card-a-highly-customizable-graph-card/272877)
           required: true
