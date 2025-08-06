@@ -10,9 +10,6 @@
 
 **Created July 2025 as the original repo seems no longer supported since mid 2024. Until further notice it is in the process of cleaning, fixing, updating ... which may take a while**
 
-**Disclaimer**: 
-I am not a seasoned frontend developer. The card itself is quite technical, adding challenges to mid-level development skills. As a result I am OK to spend time trying to fix issues that are multi-user impacting i.e. major bugs and/or cases without workarounds found. **I appreciate PR's that are thoroughly tested, do contact me up front when you want to start coding, so I can be prepared too :)**
-
 ### Looking for co-maintainers for this repo, please ping me <!-- omit in toc -->
 
 ## Changes since the copy from RomRider v2.1.2 (this section will be removed in due time)
@@ -31,6 +28,9 @@ Features:
 - layout: `in_legend` now also supports `before_now` values
 - layout: `marker` can be defined on theindividual series
 - fomrat: `unit` can be defined before or after the value in the header
+
+**Disclaimer**: 
+I am not a seasoned frontend developer. The card itself is quite technical, adding challenges to mid-level development skills. As a result I am OK to spend time trying to fix issues that are multi(!)-user impacting i.e. major bugs and/or cases without workarounds found. **I appreciate PR's that are thoroughly tested, do contact me up front when you want to start coding, so I can be prepared too :)**
 
 ## Documentation
 
