@@ -15,7 +15,7 @@ I am not a seasoned frontend developer. The card itself is quite technical, addi
 
 ### Looking for co-maintainers for this repo, please ping me <!-- omit in toc -->
 
-## Temp section for changes since the copy
+## Changes since the copy from RomRider v2.1.2 (this section will be removed in due time)
 
 Fixes:
 - upgrade to newer library apexcharts.js
