@@ -18,19 +18,19 @@ I am not a seasoned frontend developer. The card itself is quite technical, addi
 ## Changes since the copy from RomRider v2.1.2 (this section will be removed in due time)
 
 Fixes:
-- upgrade to newer library apexcharts.js
-- point `annotations` now work
-- align config of card with the 'series'-type dashboard in HA
-- undo toolbox shining through other dashboard elements
-- show toolbox options to select zoom and pan on mobile (awaiting unhide-icon fix by apexcharts.js)
-- `float_precision` now adds trailing zero's to match the precision
-- auto-scaling of y-axis in stacked setup
+- library: upgrade to newer library apexcharts.js
+- layout: point `annotations` now work
+- format: `float_precision` now adds trailing zero's to match the precision
+- layout: auto-scaling of y-axis in stacked setup
+- HA cards: align config of card with the 'series'-type dashboard in HA
+- toolbox: undo shining-through of the toolbox icons in other dashboard elements
+- toolbox: show toolbox options to select zoom and pan on mobile (awaiting unhide-icon fix by apexcharts.js)
 
 Features:
-- `in_header` and `in_legend` now both support sum and average of the data in range
-- `in_legend` now also supports `before_now` values
-- `marker` can be defined on theindividual series
-- `unit` can be defined before or after the valu ein the header
+- layout: `in_header` and `in_legend` now both support sum and average of the data in range
+- layout: `in_legend` now also supports `before_now` values
+- layout: `marker` can be defined on theindividual series
+- fomrat: `unit` can be defined before or after the value in the header
 
 ## Documentation
 
