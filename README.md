@@ -285,7 +285,7 @@ series:
 | ---- | :--: | :-----: | :---: | ----------- |
 | `show` | boolean | `false` | rr2.1.2 | Show or hide the header |
 | `title` | string | | rr2.1.2 | The title of the chart you want to display |
-| `title_actions` | object | rr2.1.2 | Actions to perform while tapping the title of the chart. See [title_actions](#header_actions-or-title_actions-options) |
+| `title_actions` | object | | rr2.1.2 | Actions to perform while tapping the title of the chart. See [title_actions](#header_actions-or-title_actions-options) |
 | `floating` | boolean | `false` | rr2.1.2 | Makes the header float above the graph. Positionning will be supported later |
 | `show_states` | boolean | `false` | rr2.1.2 | Show or hide the states in the header |
 | `colorize_states` | boolean | `false` | rr2.1.2 | Colorize the states based on the color of the serie |
