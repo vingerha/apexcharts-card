@@ -85,6 +85,8 @@ export function getLayoutConfig(
     },
     markers: {
       showNullDataPoints: false,
+      size: getMarkerSize(config, false),
+      colors: getMarkerColor(config, false),
     },
     noData: {
       text: 'Loading...',
@@ -170,6 +172,8 @@ export function getBrushLayoutConfig(
     },
     markers: {
       showNullDataPoints: false,
+      size: getMarkerSize(config, true),
+      colors: getMarkerColor(config, false),      
     },
     noData: {
       text: 'Loading...',
@@ -187,15 +191,14 @@ function getFillOpacity(config: ChartCardConfig, brush: boolean): number[] {
 
 function getSeries(config: ChartCardConfig, hass: HomeAssistant | undefined, brush: boolean) {
   const series = brush ? config.series_in_brush : config.series_in_graph;
+
   if (TIMESERIES_TYPES.includes(config.chart_type)) {
-    return series.map((serie, index) => {
-      return {
-        name: computeName(index, series, undefined, hass?.states[serie.entity]),
-        group: config.stacked && serie.type === 'column' ? serie.stack_group : undefined,
-        type: serie.type,
-        data: [],
-      };
-    });
+    return series.map((serie, index) => ({
+      name: computeName(index, series, undefined, hass?.states[serie.entity]),
+      group: config.stacked && serie.type === 'column' ? serie.stack_group : undefined,
+      type: serie.type,
+      data: [],
+    }));
   } else {
     return [];
   }
@@ -400,6 +403,40 @@ function getLastValueBeforeNow(
   return lastVal;
 }
 
+function getSumValue(
+    data: { x: number; y: number }[]
+    ): number | undefined {
+  const now = Date.now();
+  let sumVal: number | undefined = undefined;
+  for (const pt of data) {
+    if (pt.y && pt.x <= now){
+      sumVal = (sumVal ?? 0) + pt.y;
+      }
+  }
+  return sumVal;
+}
+
+function getAverageValue(
+    data: { x: number; y: number }[]
+    ): number | undefined {
+  const now = Date.now();
+  const len = data.length;
+  if (len > 0) {
+    let sumVal = 0;
+    let itemCount = 0;
+    for (const pt of data) {
+      if (pt.y != null && pt.x <= now){
+        sumVal = sumVal + pt.y;
+        itemCount +=1;
+        }
+    }
+    return sumVal/itemCount;
+    } 
+    else {
+      return undefined;
+    }
+}
+
 function getLegendFormatter(config: ChartCardConfig, hass: HomeAssistant | undefined) {
   return function (_, opts, conf = config, hass2 = hass) {
     const name = computeName(
@@ -423,6 +460,18 @@ function getLegendFormatter(config: ChartCardConfig, hass: HomeAssistant | undef
 			const ys = opts.w.globals.series[opts.seriesIndex];  // Y values
 			const points: { x: number; y: number }[] = xs.map((xVal: number, i: number) => ({ x: xVal, y: ys[i],}));
 			value = getLastValueBeforeNow(points)
+		}
+    if (inLegend === 'sum') {
+			const xs = opts.w.globals.seriesX[opts.seriesIndex]; // X values
+			const ys = opts.w.globals.series[opts.seriesIndex];  // Y values
+			const points: { x: number; y: number }[] = xs.map((xVal: number, i: number) => ({ x: xVal, y: ys[i],}));
+			value = getSumValue(points)
+		}
+    if (inLegend === 'average') {
+			const xs = opts.w.globals.seriesX[opts.seriesIndex]; // X values
+			const ys = opts.w.globals.series[opts.seriesIndex];  // Y values
+			const points: { x: number; y: number }[] = xs.map((xVal: number, i: number) => ({ x: xVal, y: ys[i],}));
+			value = getAverageValue(points)
 		}
 		if (conf.series_in_graph[opts.seriesIndex]?.invert && value) {
 			value = -value;
@@ -491,6 +540,29 @@ function getStrokeDash(config: ChartCardConfig, brush: boolean) {
   const series = brush ? config.series_in_brush : config.series_in_graph;
   return series.map((serie) => {
     return serie.stroke_dash;
+  });
+}
+
+function getMarkerSize(config: ChartCardConfig, brush: boolean) {
+  if (config.chart_type !== undefined && config.chart_type !== 'line')
+    return config.apex_config?.stroke?.width === undefined ? 3 : config.apex_config?.stroke?.width;
+  const series = brush ? config.series_in_brush : config.series_in_graph;
+  return series.map((serie) => {
+    if (serie.marker !== undefined && serie.marker.size !== undefined) {
+      return serie.marker.size;
+    }
+    return [undefined, 'line', 'area'].includes(serie.type) ? 5 : 0;
+  });
+}
+function getMarkerColor(config: ChartCardConfig, brush: boolean) {
+  if (config.chart_type !== undefined && config.chart_type !== 'line')
+    return config.apex_config?.stroke?.width === undefined ? 3 : config.apex_config?.stroke?.width;
+  const series = brush ? config.series_in_brush : config.series_in_graph;
+  return series.map((serie) => {
+    if (serie.marker !== undefined && serie.marker.color !== undefined) {
+      return serie.marker.color;
+    }
+    return [undefined, 'line', 'area'].includes(serie.type) ? 'black' : '';
   });
 }
 

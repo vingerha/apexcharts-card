@@ -79,6 +79,10 @@ export interface ChartCardAllSeriesExternalConfig {
   curve?: 'smooth' | 'straight' | 'stepline' | 'monotoneCubic';
   stroke_width?: number;
   stroke_dash?: number;
+  marker?:{
+    size?: number;
+    color?: string;
+  };
   extend_to?: false | 'end' | 'now';
   unit?: string;
   invert?: boolean;
@@ -116,9 +120,9 @@ export interface ActionsConfig {
 
 export interface ChartCardSeriesShowConfigExt {
   as_duration?: ChartCardPrettyTime;
-  in_legend?: boolean | 'raw' | 'before_now' | 'after_now';
+  in_legend?: boolean | 'raw' | 'before_now' | 'after_now' | 'sum' | 'average';
   legend_value?: boolean;
-  in_header?: boolean | 'raw' | 'before_now' | 'after_now';
+  in_header?: boolean | 'raw' | 'before_now' | 'after_now' | 'sum' | 'average';
   unit?: boolean | 'before_value';
   name_in_header?: boolean;
   header_color_threshold?: boolean;

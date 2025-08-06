@@ -858,7 +858,14 @@ class ChartsCard extends LitElement {
                 now.getTime() + (this._seriesOffset[index] ? this._seriesOffset[index] : 0),
                 inHeader === 'before_now',
               );
-            } else {
+            }
+            else if (inHeader === 'sum') {
+              this._headerState[index] = graph.sumValue();
+            } 
+            else if (inHeader === 'average') {
+              this._headerState[index] = graph.averageValue();
+            } 
+            else {
               // not raw
               this._headerState[index] = graph.lastState;
             }
