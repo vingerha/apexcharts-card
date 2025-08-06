@@ -1,3 +1,10 @@
+## [1.4.0-dev.1](https://github.com/vingerha/apexcharts-card/compare/v1.3.0...v1.4.0-dev.1) (2025-08-06)
+
+
+### Features
+
+* **format:** sum+average in header/legend, control marker size&color per entity ([ce71379](https://github.com/vingerha/apexcharts-card/commit/ce713790cf232e083d2bb3034c6586060c1736e8))
+
 ## [1.3.0](https://github.com/vingerha/apexcharts-card/compare/v1.2.0...v1.3.0) (2025-07-28)
 
 
