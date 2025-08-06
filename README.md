@@ -6,14 +6,31 @@
 [![Beta](https://img.shields.io/github/package-json/v/vingerha/apexcharts-card/dev?label=release%40dev)](https://github.com/vingerha/apexcharts-card/releases)
 [![Community Forum](https://img.shields.io/badge/community-forum-brightgreen.svg)](https://community.home-assistant.io/t/apexcharts-card-a-highly-customizable-graph-card/272877)
 
-## This is an improved version (copy+changes) of the ApexCharts Card by [@RomRider](https://github.com/RomRider) <!-- omit in toc -->
+## This is an enhanced version (copy+changes) of the ApexCharts Card by [@RomRider](https://github.com/RomRider) <!-- omit in toc -->
 
 **Created July 2025 as the original repo seems no longer supported since mid 2024. Until further notice it is in the process of cleaning, fixing, updating ... which may take a while**
 
 **Disclaimer**: 
 I am not a seasoned frontend developer. The card itself is quite technical, adding challenges to mid-level development skills. As a result I am OK to spend time trying to fix issues that are multi-user impacting i.e. major bugs and/or cases without workarounds found. **I appreciate PR's that are thoroughly tested, do contact me up front when you want to start coding, so I can be prepared too :)**
 
-## Looking for co-maintainers for this repo, please ping me <!-- omit in toc -->
+### Looking for co-maintainers for this repo, please ping me <!-- omit in toc -->
+
+## Temp section for changes since the copy
+
+Fixes:
+- upgrade to newer library apexcharts.js
+- point `annotations` now work
+- align config of card with the 'series'-type dashboard in HA
+- undo toolbox shining through other dashboard elements
+- show toolbox options to select zoom and pan on mobile (awaiting unhide-icon fix by apexcharts.js)
+- `float_precision` now adds trailing zero's to match the precision
+- auto-scaling of y-axis in stacked setup
+
+Features:
+- `in_header` and `in_legend` now both support sum and average of the data in range
+- `in_legend` now also supports `before_now` values
+- `marker` can be defined on theindividual series
+- `unit` can be defined before or after the valu ein the header
 
 ## Documentation
 
@@ -22,9 +39,6 @@ I am not a seasoned frontend developer. The card itself is quite technical, addi
 This is higly customizable graph card for [Home-Assistant](https://www.home-assistant.io)'s Lovelace UI.<br/>
 
 It is based on [ApexCharts.js](https://apexcharts.com) and offers most of the features of the library.
-
-It is also inspired by the great [`mini-graph-card`](https://github.com/kalkih/mini-graph-card) by [@kalkih](https://github.com/kalkih)
-
 
 However, some things might be broken :grin:
 
