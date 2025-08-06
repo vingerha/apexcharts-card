@@ -551,7 +551,7 @@ function getMarkerSize(config: ChartCardConfig, brush: boolean) {
     if (serie.marker !== undefined && serie.marker.size !== undefined) {
       return serie.marker.size;
     }
-    return [undefined, 'line', 'area'].includes(serie.type) ? 5 : 0;
+    return 0;
   });
 }
 function getMarkerColor(config: ChartCardConfig, brush: boolean) {
