@@ -36,7 +36,7 @@ I am not a seasoned frontend developer. The card itself is quite technical, addi
 
 ![Header](https://github.com/vingerha/apexcharts-card/raw/master/docs/Header.png)
 
-This is higly customizable graph card for [Home-Assistant](https://www.home-assistant.io)'s Lovelace UI.<br/>
+This is highly customizable graph card for [Home-Assistant](https://www.home-assistant.io)'s Lovelace UI.<br/>
 
 It is based on [ApexCharts.js](https://apexcharts.com) and offers most of the features of the library.
 
@@ -100,7 +100,7 @@ For now this is the only method as the original version/source still is represen
 
 1. Download and copy `apexcharts-card.js` from the [latest release](https://github.com/vingera/apexcharts-card/releases/latest) into your `config/www` directory.
 
-2. Add the resource reference as decribed below.
+2. Add the resource reference as described below.
 
 ### CLI install
 
@@ -112,18 +112,18 @@ For now this is the only method as the original version/source still is represen
 $ wget https://github.com/vingerha/apexcharts-card/releases/download/v1.3.0/apexcharts-card.js
 ```
 
-3. Add the resource reference as decribed below.
+3. Add the resource reference as described below.
 
 Else, if you prefer the graphical editor, use the menu to add the resource:
 
 1. Make sure, advanced mode is enabled in your user profile (click on your user name to get there)
-2. Navigate to Configuration -> Lovelace Dashboards -> Resources Tab. Hit orange (+) icon
-3. Enter URL `/local/apexcharts-card.js` and select type "JavaScript Module".
+2. Navigate to Settings -> Dashboards -> ⋮ in the top-right corner -> Resources -> blue "Add Resource" button
+3. Enter URL `/hacsfiles/apexcharts-card/apexcharts-card.js` and select type "JavaScript Module".
 4. Restart Home Assistant.
 
 ## Data processing steps
 
-This diagrams shows how your data goes through all the steps allowed by this card:
+This diagram shows how your data goes through all the steps allowed by this card:
 
 ![data_processing_steps](docs/data_processing_chart.png)
 
@@ -131,9 +131,9 @@ This diagrams shows how your data goes through all the steps allowed by this car
 
 ### Main Options
 
-:warning: Since this card is in its debuts, you should expect breaking changes moving forward. :warning:
+:warning: You should expect breaking changes moving forward. :warning:
 
-The card stricly validates all the options available (but not for the `apex_config` object). If there is an error in your configuration, it will tell you where and display a red error card.
+The card strictly validates all the options available (but not for the `apex_config` object). If there is an error in your configuration, it will tell you where and display a red error card.
 
 **rr2.1.2 indicates that this already existed in the source of this repo, the RomRider last version**
 
@@ -144,8 +144,8 @@ The card stricly validates all the options available (but not for the `apex_conf
 | :white_check_mark: `type` | string | | rr2.1.2 | `custom:apexcharts-card` |
 | :white_check_mark: `series` | array | | rr2.1.2 | See [series](#series-options) |
 | `config_templates` | array | | rr2.1.2 | Define a configuration once and reuse it multiple times. See [config_templates](#configuration-templates) |
-| `color_list` | array | | rr2.1.2 | Define the array of colors applied to the series. Will be overriden by each serie's color if defined. Usefull for `config_templates` mainly. |
-| `all_series_config` | object | | rr2.1.2 | If something is defined here it will apply this config to all the series. It accepts the same options as a serie minus `entity`. It is useful to avoid repetition but the same thing can be achieve in each serie individually. See [series](#series-options) and [all_series_config](#all_series_config-options) for an example |
+| `color_list` | array | | rr2.1.2 | Define the array of colors applied to the series. Will be overridden by each serie's color if defined. Useful for `config_templates` mainly. |
+| `all_series_config` | object | | rr2.1.2 | If something is defined here it will apply this config to all the series. It accepts the same options as a series minus `entity`. It is useful to avoid repetition but the same thing can be achieved in each series individually. See [series](#series-options) and [all_series_config](#all_series_config-options) for an example |
 | `chart_type` | string | `line` | rr2.1.2 | See [chart_type](#chart_type-options) |
 | `update_interval` | string | | rr2.1.2 | By default the card updates on every state change. Setting this overrides the behaviour. Valid values are any time string, eg: `1h`, `12min`, `1d`, `1h25`, `10sec`, ... |
 | `update_delay` | string | `1500ms` | rr2.1.2 | If the chart doesn't display the last state but the one before, you'll want to increase this value, don't go over `10s`, it's not necessary. You'll also want to increase this value if you are using `attribute` in the `series`. Valid values are any time strings. This is because of how Home-Assistant works with history, see [here](https://www.home-assistant.io/integrations/recorder/#commit_interval) |
@@ -159,9 +159,9 @@ The card stricly validates all the options available (but not for the `apex_conf
 | `header` | object | | rr2.1.2 | See [header](#header-options) |
 | `now` | object | | rr2.1.2 | See [now](#now-options) |
 | `yaxis` | array | | rr2.1.2 | See [yaxis](#yaxis-options-multi-y-axis) |
-| `apex_config`| object | | rr2.1.2 | Apexcharts API 1:1 mapping. You call see all the options [here](https://apexcharts.com/docs/installation/) --> `Options (Reference)` in the Menu. See [Apex Charts](#apex-charts-options-example) |
+| `apex_config`| object | | rr2.1.2 | Apexcharts API 1:1 mapping. You can see all the options [here](https://apexcharts.com/docs/installation/) --> `Options (Reference)` in the Menu. See [Apex Charts](#apex-charts-options-example) |
 | `experimental` | object | | rr2.1.2 | See [experimental](#experimental-features) |
-| `locale` | string | | rr2.1.2 | Default is to inherit from Home-Assistant's user configuration. This overrides it and forces the locale. Eg: `en`, or `fr`. Reverts to `en` if locale is unknown. |
+| `locale` | string | | rr2.1.2 | Default is to inherit from Home-Assistant's user configuration. This overrides it and forces the locale. eg: `en`, or `fr`. Reverts to `en` if the locale is unknown. |
 | `brush` | object | | rr2.1.2 | See [brush](#brush-experimental-feature) |
 
 
@@ -181,21 +181,21 @@ The card stricly validates all the options available (but not for the `apex_conf
 | `marker` | object | ``| v1.4.0 | `size`: sets the size, default 0, `color` defines the color, default black |
 | `type` | string | `line` | rr2.1.2 | `line`, `area` or `column` are supported for now |
 | `curve` | string | `smooth` | rr2.1.2 | `smooth` (nice curve),  `straight` (direct line between points) or `stepline` (flat line until next point then straight up or down), `monotoneCubic` (create a monotone cubic spline) |
-| `extend_to` | boolean or string | `end` | rr2.1.2 | If value is `end`, it will extend the line/area to the end of the chart. With `now`, it will extend it to the current time (usefull for chart showing current and future data). If `false` it will not do anything. Only available for `line` and `area` types. |
+| `extend_to` | boolean or string | `end` | rr2.1.2 | If the value is `end`, it will extend the line/area to the end of the chart. With `now`, it will extend it to the current time (useful for chart showing current and future data). If `false` it will not do anything. Only available for `line` and `area` types. |
 | `unit` | string | | rr2.1.2 | Override the unit of the sensor |
-| `float_precision` | number | `1` | rr2.1.2 | The precision used to display data in the legend and the tooltip. It doesn't impact how the data is displayed on the graph. It adds trailing zero's until the configured number is reached (intro: 1.3.0)|
+| `float_precision` | number | `1` | rr2.1.2 | The number of decimals used to display data in the legend and the tooltip. It doesn't impact how the data is displayed on the graph. It adds trailing zero's until the configured number is reached (intro: 1.3.0)|
 | `fill_raw` | string | `'null'` | rr2.1.2 | If there is any missing value in the history, `last` will replace them with the last non-empty state, `zero` will fill missing values with `0`, `'null'` will fill missing values with `null`. This is applied before `group_by` options |
 | `group_by` | object | | rr2.1.2 | See [group_by](#group_by-options) |
-| `invert` | boolean | `false` | rr2.1.2 | Negates the data (`1` -> `-1`). Usefull to display opposites values like network in (standard)/out (inverted) |
+| `invert` | boolean | `false` | rr2.1.2 | Negates the data (`1` -> `-1`). Useful to display opposite values like network in (standard)/out (inverted) |
 | `transform` | string | | rr2.1.2 | Transform your raw data in any way you like. See [transform](#transform-option) |
 | `data_generator` | string | | rr2.1.2 | See [data_generator](#data_generator-option) |
 | `statistics` | object | | rr2.1.2 | Use HA statistical data (long-term). See [statistics](#statistics-options) |
-| `offset` | string | | rr2.1.2 | This is different from the main `offset` parameter. This is at the series level. It is only usefull if you want to display data from for eg. yesterday on top of the data from today for the same sensor and compare the data. The time displayed in the tooltip will be wrong as will the x axis information. Valid values are any negative time string, eg: `-1h`, `-12min`, `-1d`, `-1h25`, `-10sec`, ... `month` (365.25 days / 12) and `year` (365.25 days) as unit will generate inconsistent result, you should use days instead. |
-| `time_delta` | string | | rr2.1.2 | This applies a time delta to all the datapoints of your chart **after** fetching them. You can cumulate it with `offset`. Valid values are any time strings starting with `+` or `-`, eg: `-30min`, `+2h`, `-2d`, ... |
+| `offset` | string | | rr2.1.2 | This is different from the main `offset` parameter. This is at the series level. It is only useful if you want to display data from for eg. yesterday on top of the data from today for the same sensor and compare the data. The time displayed in the tooltip will be wrong as will the x axis information. Valid values are any negative time string, eg: `-1h`, `-12min`, `-1d`, `-1h25`, `-10sec`, ... `month` (365.25 days / 12) and `year` (365.25 days) as unit will generate inconsistent result, you should use days instead. |
+| `time_delta` | string | | rr2.1.2 | This applies a time delta to all the data points of your chart **after** fetching them. You can cumulate it with `offset`. Valid values are any time strings starting with `+` or `-`, eg: `-30min`, `+2h`, `-2d`, ... |
 | `min` | number | `0` | rr2.1.2 | Only used when `chart_type = radialBar`, see [chart_type](#chart_type-options). Used to convert the value into a percentage. Minimum value of the sensor |
 | `max` | number | `100` | rr2.1.2 | Only used when `chart_type = radialBar`, see [chart_type](#chart_type-options). Used to convert the value into a percentage. Maximum value of the sensor |
 | `color_threshold` | object | | rr2.1.2 | See [experimental](#experimental-features) |
-| `yaxis_id` | string | | rr2.1.2 | The identification name of the y-axis which this serie should be associated to. See [yaxis](#yaxis-options-multi-y-axis) |
+| `yaxis_id` | string | | rr2.1.2 | The identification name of the y-axis to which this series should be associated to. See [yaxis](#yaxis-options-multi-y-axis) |
 | `show` | object | | rr2.1.2 | See [serie's show options](#series-show-options) |
 | `header_actions` | object | | rr2.1.2 | See [header_actions](#header_actions-or-title_actions-options) |
 
@@ -323,7 +323,7 @@ The position of the marker will only update when the card updates (state change 
 | Name | Type | Default | Since | Description |
 | ---- | :--: | :-----: | :---: | ----------- |
 | `func` | string | `raw` | rr2.1.2 | See [func](#func-options) |
-| `duration` | string | `1h` | rr2.1.2 | If `func` is **not** `raw` only. It builds buckets of states over `duration` period of time. Doesn't work for months. Eg of valid values: `2h`, `1d`, `10s`, `25min`, `1h30`, ... |
+| `duration` | string | `1h` | rr2.1.2 | If `func` is **not** `raw` only. It builds buckets of states over a `duration`. Doesn't work for months. Eg of valid values: `2h`, `1d`, `10s`, `25min`, `1h30`, ... |
 | `fill` | string | `last` | rr2.1.2 | If `func` is **not** `raw` only. If there is any missing value in the buckets of history data (grouped by duration), `last` will replace them with the last non-empty state, `zero` will fill missing values with `0`, `'null'` will fill missing values with `null` |
 | `start_with_last` | boolean | `false` | rr2.1.2 | If `true`, each bucket of data will start with the last value from the previous bucket of data. Mostly useful only with `func: diff` |
 
@@ -348,9 +348,9 @@ The position of the marker will only update when the card updates (state change 
 | ---- | :---: | ----------- |
 | `line` | rr2.1.2 | This is the default and will show a timeline. It is compatible with `series.type` = `column`, `line` and `area` |
 | `scatter` | rr2.1.2 | Displays a cloud of points without a line between the values |
-| `pie` | rr2.1.2 | This will display a pie chart with the last value computed of each sensor |
-| `donut` | rr2.1.2 | This will display a donut chart with the last value computed of each sensor, same as pie but with a hole in the center |
-| `radialBar` | rr2.1.2 | This will display a radial bar chart with the last value computed of each sensor. The value is represented in percentage only. It is required to provide `min` and `max` for each series displayed as it requires to convert the value into percentage. The default value for `min` is `0` and for `max` it is `100`. This graph works well if you want to display sensors natively in percentages |
+| `pie` | rr2.1.2 | This will display a pie chart with the last value computed for each sensor |
+| `donut` | rr2.1.2 | This will display a donut chart with the last value computed for each sensor, the same as pie but with a hole in the center |
+| `radialBar` | rr2.1.2 | This will display a radial bar chart with the last value computed for each sensor. The value is represented in percentage only. It is required to provide `min` and `max` for each series displayed as it requires to convert the value into percentage. The default value for `min` is `0` and for `max` it is `100`. This graph works well if you want to display sensors natively in percentages |
 
 ![Charts Type](docs/charts_type.png)
 
@@ -358,15 +358,15 @@ The position of the marker will only update when the card updates (state change 
 
 | Name | Since | Description |
 | ---- | :---: | ----------- |
-| `start` | rr2.1.2 | Display the graph from the begining of the `minute`, `day`, `hour`, `week`, `month`, `year`, `isoWeek`. `isoWeek` is the start of the week according to ISO 8601 |
+| `start` | rr2.1.2 | Display the graph from the beginning of the `minute`, `day`, `hour`, `week`, `month`, `year`, `isoWeek`. `isoWeek` is the start of the week according to ISO 8601 |
 | `end` | rr2.1.2 | Display the graph from the end of the `minute`, `day`, `hour`, `week`, `month`, `year`, `isoWeek`. `isoWeek` is the end of the week according to ISO 8601 |
 | `offset` | rr2.1.2 | Offset the graph by an amount of time. To offset in the past, start with `-`. Eg. of valid values: `-1day`, `-12h`, `12h`, `30min`, ... `month` (365.25 days / 12) and `year` (365.25 days) as unit will generate inconsistent result, you should use days instead. |
 
 Span enables you to:
 * Offset the graph by an amount of time
-* `start`: Display the graph from the begining of the `minute`, `day`, `hour`, `week`, `month`, `year`. In this case, `graph_span` should be in most cases `<=` to 1 unit of the unit defined in start.
+* `start`: Display the graph from the beginning of the `minute`, `day`, `hour`, `week`, `month`, `year`. In this case, `graph_span` should be in most cases `<=` to 1 unit of the unit defined in start.
 * `end`: Display the graph from the end of the `minute`, `day`, `hour`, `week`, `month`, `year`
-* Combined with `group_by` in a serie, the group will begin at the tick of the `start` unit (+/- `offset` if defined)
+* Combined with `group_by` in a series, the group will begin at the tick of the `start` unit (+/- `offset` if defined)
 * Only one of `start` or `end` is supported at the same time
 
 ```yaml
@@ -378,7 +378,7 @@ span:
 ```
 
 Eg:
-* Display 24h from the start of the current day (00:00 -> 23:59)
+* Display 24 hours from the start of the current day (00:00 -> 23:59)
   ```yaml
   type: custom:apexcharts-card
   graph_span: 24h
@@ -411,7 +411,7 @@ Eg:
 
 ### `transform` Option
 
-With transform, you can modify raw data comming from Home-Assistant's history using a javascript function.
+With transform, you can modify raw data coming from Home-Assistant's history using a javascript function.
 
 Some of the things you can do:
 * Transform any state into a number (for eg. for binary_sensors)
@@ -420,7 +420,7 @@ Some of the things you can do:
 
 Your javascript code will receive:
 * `x`: a state or a value of the attribute if you defined one (it can be a `string`, `null` or a `number` depending on the entity type you've assigned)
-* `hass`: the full `hass` object (`hass.states['other.entity']` to get the state object of another entity for eg.)
+* `hass`: the full `hass` object (e.g. use `hass.states['other.entity'].state` to get the state object of another entity)
 * `entity`: the full state object of the entity from the history entry currently being transformed
 
 And should return a `number`, a `float` or `null`.
@@ -450,7 +450,7 @@ Some examples:
 
 Before we start, to learn javascript, google is your friend or ask for help on the [forum](https://community.home-assistant.io/t/apexcharts-card-a-highly-customizable-graph-card/272877) :slightly_smiling_face:
 
-`data_generator` is an advanced feature. It enables you to build your own data out of the last state of a sensor. It completely bypasses the history retrieval and caching mecanism.
+`data_generator` is an advanced feature. It enables you to build your own data out of the last state of a sensor. It completely bypasses the history retrieval and caching mechanism.
 
 You'll need to write a javascript function which returns a `[timestamp, value][]`:
 * `timestamp` is the timestamp of the data in ms
@@ -460,7 +460,7 @@ Inside your javascript code, you'll have access to those variables:
 * `entity`: the entity object
 * `start` (Date object): the start Date object of the graph currently displayed
 * `end` (Date object): the end Date object of the graph currently displayed
-* `hass`: the complete `hass` object
+* `hass`: the complete `hass` object (e.g. use `hass.states['other.entity'].state` to get the state object of another entity)
 * `moment`: the [Moment.JS](https://momentjs.com/) object to help you manipulate time and dates
 
 Let's take this example:
@@ -522,17 +522,17 @@ Let's take this example:
 
 ### `yaxis` Options. Multi-Y axis
 
-:warning: If this option is used, you can't define `yaxis` in the main `apex_config` option as it will be overriden.
+:warning: If this option is used, you can't define `yaxis` in the main `apex_config` option as it will be overridden.
 
 You can have as many y-axis as there are series defined in your configuration or less.
 
 | Name | Type | Default | Since | Description |
 | ---- | :--: | :-----: | :---: | ----------- |
-|`id` | string | | rr2.1.2 | **Required** if you define multiple yaxis. The identification name of the yaxis used to map it to a serie. Needs to be unique. |
+|`id` | string | | rr2.1.2 | **Required** if you define multiple yaxis. The identification name of the y-axis used to map it to a serie. Needs to be unique. |
 | `show` | boolean | `true` | rr2.1.2 | Whether to show or not the axis on the chart |
 | `opposite` | boolean | `false` | v1.9.0 | If `true`, the axis will be shown on the right side of the chart |
-| `min` | `auto`, number or string | `auto` | rr2.1.2 | If undefined or `auto`, the `min` of the yaxis will be automatically calculated based on the min value of all the series associated to this axis. See [below](#minmax-format) for other formats. |
-| `max` | `auto`, number or string | `auto` | rr2.1.2 | If undefined or `auto`, the `min` of the yaxis will be automatically calculated based on the max value of all the series associated to this axis. See [below](#minmax-format) for other formats. |
+| `min` | `auto`, number or string | `auto` | rr2.1.2 | If undefined or `auto`, the `min` of the y-axis will be automatically calculated based on the min value of all the series associated with this axis. See [below](#minmax-format) for other formats. |
+| `max` | `auto`, number or string | `auto` | rr2.1.2 | If undefined or `auto`, the `min` of the y-axis will be automatically calculated based on the max value of all the series associated with this axis. See [below](#minmax-format) for other formats. |
 | `decimals` | number | `1` | rr2.1.2 | Number of decimals to show on this y-axis |
 | `apex_config` | object | | rr2.1.2 | Any configuration from https://apexcharts.com/docs/options/yaxis/, except `min`, `max`, `show` and `opposite` |
 | `align_to` | number | | rr2.1.2 | Aligns the yaxis extremas to the closest multiple of `align_to`. Only valid if `min` or `max` are not fixed values. |
@@ -546,8 +546,8 @@ You can have as many y-axis as there are series defined in your configuration or
   * `min: ~90` and the min of the data in the series is `120`: the y-axis min value will be `90`
   * `min: ~90` and the min of the data in the series is `60`: the y-axis min value will be `60`
 * `'|+20|'` or `'|-20|'`: This will add/remove the value between `| |` from the min/max
-  * `min: '|-20|'`: The min of the data in the series is `32`, the y-axis min will be `12` (= `32 - 20`)
-  * `max: '|+10|'`: The max of the data in the series is `32`, the y-axis max will be `42` (= `32 + 10`)
+  * `min: '|-20|'`: The min of the data in the series is `32`, then the y-axis min will be `12` (= `32 - 20`)
+  * `max: '|+10|'`: The max of the data in the series is `32`, then the y-axis max will be `42` (= `32 + 10`)
 
 #### Examples
 
@@ -561,9 +561,9 @@ You can have as many y-axis as there are series defined in your configuration or
   graph_span: 20min
   series:
     - entity: sensor.random0_100
-  yaxis: # only 1 yaxis, no need for id or yaxis_id
+  yaxis: # only 1 y-axis, no need for id or yaxis_id
     - min: 0
-      # if the sensor doesn't go above 50, the max of the axis will be 50
+      # If the sensor doesn't go above 50, the max of the axis will be 50
       # else the max will be the maximum value of the sensor
       max: ~50
       decimals: 0
@@ -575,7 +575,7 @@ You can have as many y-axis as there are series defined in your configuration or
   * `sensor.random0_100`: goes from `0` to `100`
   * `sensor.random_0_1000`: goes from `0` to `1000`
 
-  The `min` and `max` of both y-axis are auto calculated based on the spread of the data associated with each axis.
+  The `min` and `max` of both y-axis are auto-calculated based on the spread of the data associated with each axis.
 
   ![multi_y_axis](docs/multi_y_axis.png)
 
@@ -661,7 +661,7 @@ For code junkies, you'll find the default options I use in [`src/apex-layouts.ts
 - You can overload any parameter with a new one
 - Arrays will be merged by matching the index
 - You can also inherit another template from within a template.
-- You can inherit multiple templates at once by making it an array. In this case, the templates will be merged together with the current configuration in the order they are defined. This happens recursively.
+- You can inherit multiple templates at once by making it an array. In this case, the templates will be merged with the current configuration in the order they are defined. This happens recursively.
 
   ```yaml
   type: custom:apexcharts-card
@@ -675,7 +675,7 @@ For code junkies, you'll find the default options I use in [`src/apex-layouts.ts
 
 The card templates will be applied in the order they are defined: `template2` will be merged with `template1` and then the local config will be merged with the result. You can still chain templates together (ie. define template in a apexcharts-card template. It will follow the path recursively).
 
-Make sure which type of lovelace dashboard you are using before changing the main lovelace configuration:
+Make sure which type of the lovelace dashboard you are using before changing the main lovelace configuration:
   * **`managed`** changes are managed by lovelace UI - add the template configuration to configuration in raw editor
       * go to your dashboard
       * click three dots and `Edit dashboard` button
@@ -684,7 +684,7 @@ Make sure which type of lovelace dashboard you are using before changing the mai
 
 **Note:** Templates have to be defined in all dashboards, they are not shared.
 
-To give you an idea where to put those (in your dashboard file/RAW editor):
+To give you an idea of where to put those (in your dashboard file/RAW editor):
 ```yaml
 apexcharts_card_templates:
   default:
@@ -722,7 +722,7 @@ And then where you define your card, you can consume those templates, and/or ove
       invert: true
 ```
 
-In the end, this would produce the same result as but it's shorter and you can reuse that template elsewhere:
+In the end, this would produce the same result, but it's shorter and you can reuse that template elsewhere:
 ```yaml
 - type: custom:apexcharts-card
   graph_span: 24h
@@ -744,7 +744,7 @@ In the end, this would produce the same result as but it's shorter and you can r
 
 #### `all_series_config` options
 
-This will allow you to apply some settings to all the series avoiding repetition. It's just syntaxic sugar and doesn't add more features.
+This will allow you to apply some settings to all the series avoiding repetition. It's just syntactic sugar and doesn't add more features.
 
 Eg:
 ```yaml
@@ -790,7 +790,7 @@ Generates the same result as repeating the configuration in each series:
 | `color_threshold` | boolean | `false` | rr2.1.2 | Will enable the color threshold feature. See [color_threshold](#color_threshold-experimental-feature) |
 | `disable_config_validation` | boolean | `false` | rr2.1.2 | If `true`, will disable the config validation. Useful if you have cards adding parameters to this one. Use at your own risk. |
 | `hidden_by_default` | boolean | `false` | rr2.1.2 | Will allow you to use the `hidden_by_default` option. See [hidden_by_default](#hidden_by_default-experimental-feature) |
-| `brush` | boolean | `false` | rr2.1.2 | Will display a brush which allows you to select a portion time to display on the main chart. See [brush](#brush-experimental-feature) |
+| `brush` | boolean | `false` | rr2.1.2 | Will display a brush which allows you to select a portion of time to display on the main chart. See [brush](#brush-experimental-feature) |
 
 ### `color_threshold` experimental feature
 
@@ -806,9 +806,9 @@ Now that you are warned, it works with:
 * `series`'s `type`: `column`, `area`, `line`
 
 Some notes:
-* For `series`'s `type: column`, the full bar will be of the color defined. Gradient is not possible
+* For `series`'s `type: column`, the full bar will be of the color defined. A gradient is not possible
 * For `series`'s `type: area`:
-  * only the filled area will be displayed with the gradient. It is not possible to do so for the line.
+  * Only the filled area will be displayed with the gradient. It is not possible to do so for the line.
   * It works better with `stroke_width: 1` or `stroke_width: 0`
 * If using `invert: true`, the values in `color_threshold` should stay the same as with `invert: false`.
 
@@ -823,7 +823,7 @@ series:
     color_threshold:
       - value: -10
         # color can be a color name, rgb(r, g, b), '#0000ff' or var(--color-variable)
-        # default is: the default color of the serie
+        # default is: the default color of the series
         color: blue
         # optional opacity, value from 0 to 1.
         # only for line and area
@@ -868,7 +868,7 @@ Things to know:
 * All the features from normal series can be applied to the brush series
 * You can configure the bottom chart the way you want with another specific `apex_config` also
 * It might be compute heavy and slow with a lot of history data points
-* It is recommended to not show too much data on the bottom chart for the sake of lisibility
+* It is recommended to not show too much data on the bottom chart for the sake of visibility
 
 Here is how to use it (this represents the chart above):
 ```yaml
@@ -1014,14 +1014,14 @@ header:
 series:
   # data from today
   - entity: sensor.temperature
-  # data from yesterday offsetted to be displayed today
+  # data from yesterday offset to be displayed today
   - entity: sensor.temperature
     offset: -1d
 ```
 
 ### Change the line thickness
 
-* Change all lines thickness
+* Change all lines' thickness
 
   ```yaml
   type: custom:apexcharts-card
