@@ -183,7 +183,7 @@ The card stricly validates all the options available (but not for the `apex_conf
 | `curve` | string | `smooth` | rr2.1.2 | `smooth` (nice curve),  `straight` (direct line between points) or `stepline` (flat line until next point then straight up or down), `monotoneCubic` (create a monotone cubic spline) |
 | `extend_to` | boolean or string | `end` | rr2.1.2 | If value is `end`, it will extend the line/area to the end of the chart. With `now`, it will extend it to the current time (usefull for chart showing current and future data). If `false` it will not do anything. Only available for `line` and `area` types. |
 | `unit` | string | | rr2.1.2 | Override the unit of the sensor |
-| `float_precision` | number | `1` | rr2.1.2 | The precision used to display data in the legend and the tooltip. It doesn't impact how the data is displayed on the graph. It adds trailing zero's until the configured number is reached (intro: 1.3.0)|
+| `float_precision` | number | `1` | rr2.1.2 | The number of decimals used to display data in the legend and the tooltip. It doesn't impact how the data is displayed on the graph. It adds trailing zero's until the configured number is reached (intro: 1.3.0)|
 | `fill_raw` | string | `'null'` | rr2.1.2 | If there is any missing value in the history, `last` will replace them with the last non-empty state, `zero` will fill missing values with `0`, `'null'` will fill missing values with `null`. This is applied before `group_by` options |
 | `group_by` | object | | rr2.1.2 | See [group_by](#group_by-options) |
 | `invert` | boolean | `false` | rr2.1.2 | Negates the data (`1` -> `-1`). Usefull to display opposites values like network in (standard)/out (inverted) |
