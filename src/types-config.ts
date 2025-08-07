@@ -78,7 +78,7 @@ export interface ChartCardAllSeriesExternalConfig {
   opacity?: number;
   curve?: 'smooth' | 'straight' | 'stepline' | 'monotoneCubic';
   stroke_width?: number;
-  stroke_dash?: number;
+  stroke_dash?: number | number[];
   marker?:{
     size?: number;
     color?: string;

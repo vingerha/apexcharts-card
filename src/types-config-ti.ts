@@ -75,7 +75,7 @@ export const ChartCardAllSeriesExternalConfig = t.iface([], {
   "opacity": t.opt("number"),
   "curve": t.opt(t.union(t.lit('smooth'), t.lit('straight'), t.lit('stepline'), t.lit('monotoneCubic'))),
   "stroke_width": t.opt("number"),
-  "stroke_dash": t.opt("number"),
+  "stroke_dash": t.opt(t.union("number", t.array("number"))),
   "marker": t.opt(t.iface([], {
     "size": t.opt("number"),
     "color": t.opt("string"),
