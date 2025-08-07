@@ -177,7 +177,7 @@ The card strictly validates all the options available (but not for the `apex_con
 | `color` | string | | rr2.1.2 | Color of the serie. Supported formats: `yellow`, `#aabbcc`, `rgb(128, 128, 128)` or `var(--css-color-variable)` |
 | `opacity` | number | `0.7` for `area`<br/>else `1` | rr2.1.2 | The opacity of the line or filled area, between `0` and `1` |
 | `stroke_width` | number | `5` | rr2.1.2 | Change the width of the line. Only works for `area` and `line` |
-| `stroke_dash` | number | `0` | rr2.1.2 | Creates a dashed line. The higher the number, the bigger the dash. |
+| `stroke_dash` | number | `0` | v1.4.0 | Creates a dashed line. The higher the number, the bigger the dash. An array can be used to specify more complex patterns, e.g.: [1,5] |
 | `marker` | object | ``| v1.4.0 | `size`: sets the size, default 0, `color` defines the color, default black |
 | `type` | string | `line` | rr2.1.2 | `line`, `area` or `column` are supported for now |
 | `curve` | string | `smooth` | rr2.1.2 | `smooth` (nice curve),  `straight` (direct line between points) or `stepline` (flat line until next point then straight up or down), `monotoneCubic` (create a monotone cubic spline) |
