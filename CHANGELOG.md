@@ -1,3 +1,10 @@
+## [1.4.0-dev.5](https://github.com/vingerha/apexcharts-card/compare/v1.4.0-dev.4...v1.4.0-dev.5) (2025-08-11)
+
+
+### Bug Fixes
+
+* **config:** bump apexcharts 5.3.3 ([8ac2075](https://github.com/vingerha/apexcharts-card/commit/8ac2075185de8a8e1e80c8907816a125950bec32))
+
 ## [1.4.0-dev.4](https://github.com/vingerha/apexcharts-card/compare/v1.4.0-dev.3...v1.4.0-dev.4) (2025-08-11)
 
 
