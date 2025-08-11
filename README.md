@@ -29,6 +29,7 @@ Features:
 - layout: `in_legend` now also supports `before_now` values
 - format: `unit` can be defined before or after the value in the header
 - format: stroke_dash now also accepts array, e.g. [3,9] for more complex patterns
+- layout: for the header and legend, one can now show the `sum`  or `average` for the series in view
 
 **Disclaimer**: 
 I am not a seasoned frontend developer. The card itself is quite technical, adding challenges to mid-level development skills. As a result I am OK to spend time trying to fix issues that are multi(!)-user impacting i.e. major bugs and/or cases without workarounds found. **I appreciate PR's that are thoroughly tested, do contact me up front when you want to start coding, so I can be prepared too :)**
