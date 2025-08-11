@@ -22,6 +22,7 @@ Fixes:
 - HA cards: align config of card with the 'series'-type dashboard in HA
 - toolbox: undo shining-through of the toolbox icons in other dashboard elements
 - toolbox: show toolbox options to select zoom and pan on mobile
+- layout: incorrectly positioned extremas for stacked series 
 
 Features:
 - layout: `in_header` and `in_legend` now both support sum and average of the data in range
