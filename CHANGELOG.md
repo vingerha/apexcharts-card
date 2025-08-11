@@ -1,3 +1,20 @@
+## [1.4.0](https://github.com/vingerha/apexcharts-card/compare/v1.3.0...v1.4.0) (2025-08-11)
+
+
+### Features
+
+* **format:** allow stroke_dash to use list of numbers for more variations ([14cb238](https://github.com/vingerha/apexcharts-card/commit/14cb238aea21a78572839df07d04083db24124c1))
+* **format:** sum+average in header/legend, control marker size&color per entity ([ce71379](https://github.com/vingerha/apexcharts-card/commit/ce713790cf232e083d2bb3034c6586060c1736e8))
+
+
+### Bug Fixes
+
+* align with repo  ([6461a33](https://github.com/vingerha/apexcharts-card/commit/6461a334b1c7ee5573669d1d8e8a2f67b5e2bcb8))
+* **config:** bump apexcharts 5.3.3 ([8ac2075](https://github.com/vingerha/apexcharts-card/commit/8ac2075185de8a8e1e80c8907816a125950bec32))
+* **format:** marker size should be 0 by default (not shown) ([fa19327](https://github.com/vingerha/apexcharts-card/commit/fa19327afdddfdb90fce13a7a2c497fb6a84ef2e))
+* **layout:** extremas not properly shown on stacked columns ([acb97a3](https://github.com/vingerha/apexcharts-card/commit/acb97a32ce7639c1fd0dd88a09dab9050d29c1a0))
+* **layout:** undo markers as it conflicted with pie charts ([8d6edee](https://github.com/vingerha/apexcharts-card/commit/8d6edee6398df2c2ac29640777e1e991110947d2))
+
 ## [1.4.0-dev.5](https://github.com/vingerha/apexcharts-card/compare/v1.4.0-dev.4...v1.4.0-dev.5) (2025-08-11)
 
 

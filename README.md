@@ -110,7 +110,7 @@ For now this is the only method as the original version/source still is represen
 2. Grab `apexcharts-card.js`:
 
 ```
-$ wget https://github.com/vingerha/apexcharts-card/releases/download/v1.3.0/apexcharts-card.js
+$ wget https://github.com/vingerha/apexcharts-card/releases/download/v1.4.0/apexcharts-card.js
 ```
 
 3. Add the resource reference as described below.
