@@ -27,7 +27,6 @@ Fixes:
 Features:
 - layout: `in_header` and `in_legend` now both support sum and average of the data in range
 - layout: `in_legend` now also supports `before_now` values
-- layout: `marker` can be defined on theindividual series
 - format: `unit` can be defined before or after the value in the header
 - format: stroke_dash now also accepts array, e.g. [3,9] for more complex patterns
 
