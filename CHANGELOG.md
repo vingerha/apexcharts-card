@@ -1,3 +1,10 @@
+## [1.4.0-dev.4](https://github.com/vingerha/apexcharts-card/compare/v1.4.0-dev.3...v1.4.0-dev.4) (2025-08-11)
+
+
+### Bug Fixes
+
+* **layout:** undo markers as it conflicted with pie charts ([8d6edee](https://github.com/vingerha/apexcharts-card/commit/8d6edee6398df2c2ac29640777e1e991110947d2))
+
 ## [1.4.0-dev.3](https://github.com/vingerha/apexcharts-card/compare/v1.4.0-dev.2...v1.4.0-dev.3) (2025-08-11)
 
 
