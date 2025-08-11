@@ -83,11 +83,6 @@ export function getLayoutConfig(
       width: getStrokeWidth(config, false),
       dashArray: getStrokeDash(config, false),
     },
-    markers: {
-      showNullDataPoints: false,
-      size: getMarkerSize(config, false),
-      colors: getMarkerColor(config, false),
-    },
     noData: {
       text: 'Loading...',
     },
@@ -169,11 +164,6 @@ export function getBrushLayoutConfig(
         config.chart_type === 'pie' || config.chart_type === 'donut' ? ['var(--card-background-color)'] : undefined,
       width: getStrokeWidth(config, true),
       dashArray: getStrokeDash(config, false),
-    },
-    markers: {
-      showNullDataPoints: false,
-      size: getMarkerSize(config, true),
-      colors: getMarkerColor(config, false),      
     },
     noData: {
       text: 'Loading...',
