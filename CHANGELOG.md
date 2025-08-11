@@ -1,3 +1,10 @@
+## [1.4.0-dev.3](https://github.com/vingerha/apexcharts-card/compare/v1.4.0-dev.2...v1.4.0-dev.3) (2025-08-11)
+
+
+### Bug Fixes
+
+* **layout:** extremas not properly shown on stacked columns ([acb97a3](https://github.com/vingerha/apexcharts-card/commit/acb97a32ce7639c1fd0dd88a09dab9050d29c1a0))
+
 ## [1.4.0-dev.2](https://github.com/vingerha/apexcharts-card/compare/v1.4.0-dev.1...v1.4.0-dev.2) (2025-08-07)
 
 
