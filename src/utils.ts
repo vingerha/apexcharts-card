@@ -41,8 +41,7 @@ export function mergeDeep(target: any, source: any): any {
   const isObject = (obj) => obj && typeof obj === 'object';
 
   if (!isObject(target) || !isObject(source)) {
-    return source;
-  }
+    return source;  }
 
   Object.keys(source).forEach((key) => {
     const targetValue = target[key];
@@ -56,7 +55,6 @@ export function mergeDeep(target: any, source: any): any {
       target[key] = sourceValue;
     }
   });
-
   return target;
 }
 
@@ -227,7 +225,6 @@ export function mergeDeepConfig(target: any, source: any): any {
       target[key] = sourceValue;
     }
   });
-
   return target;
 }
 

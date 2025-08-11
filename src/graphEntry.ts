@@ -125,6 +125,48 @@ export default class GraphEntry {
     return this.history[index][1];
   }
 
+  public sumValue(): number | null {
+    if (!this.history || this.history.length === 0) return null;
+    let sum = 0;
+    let hasValidValue = false;
+    for (const point of this.history) {
+      let value: any;
+      // Try to extract value from different formats
+      if (Array.isArray(point)) {
+        value = point[1];
+      } else if (typeof point === 'object' && point !== null && 'value' in point) {
+        value = (point as any).value;
+      }
+      if (typeof value === 'number' && !isNaN(value)) {
+        sum += value;
+        hasValidValue = true;
+      }
+    }
+    return hasValidValue ? sum : null;
+  }
+  
+  public averageValue(): number | null {
+    if (!this.history || this.history.length === 0) return null;
+    let sum = 0;
+    let itemCount = 0;
+    let hasValidValue = false;
+    for (const point of this.history) {
+      let value: any;
+      // Try to extract value from different formats
+      if (Array.isArray(point)) {
+        value = point[1];
+      } else if (typeof point === 'object' && point !== null && 'value' in point) {
+        value = (point as any).value;
+      }
+      if (typeof value === 'number' && !isNaN(value)) {
+        sum += value;
+        itemCount += 1
+        hasValidValue = true;
+      }
+    }
+    return hasValidValue ? sum/itemCount : null;
+  }
+
   get min(): number | undefined {
     if (!this._computedHistory || this._computedHistory.length === 0) return undefined;
     return Math.min(...this._computedHistory.flatMap((item) => (item[1] === null ? [] : [item[1]])));

@@ -75,7 +75,11 @@ export const ChartCardAllSeriesExternalConfig = t.iface([], {
   "opacity": t.opt("number"),
   "curve": t.opt(t.union(t.lit('smooth'), t.lit('straight'), t.lit('stepline'), t.lit('monotoneCubic'))),
   "stroke_width": t.opt("number"),
-  "stroke_dash": t.opt("number"),
+  "stroke_dash": t.opt(t.union("number", t.array("number"))),
+  "marker": t.opt(t.iface([], {
+    "size": t.opt("number"),
+    "color": t.opt("string"),
+  })),
   "extend_to": t.opt(t.union(t.lit(false), t.lit('end'), t.lit('now'))),
   "unit": t.opt("string"),
   "invert": t.opt("boolean"),
@@ -113,9 +117,9 @@ export const ActionsConfig = t.iface([], {
 
 export const ChartCardSeriesShowConfigExt = t.iface([], {
   "as_duration": t.opt("ChartCardPrettyTime"),
-  "in_legend": t.opt(t.union("boolean", t.lit('raw'), t.lit('before_now'), t.lit('after_now'))),
+  "in_legend": t.opt(t.union("boolean", t.lit('raw'), t.lit('before_now'), t.lit('after_now'), t.lit('sum'), t.lit('average'))),
   "legend_value": t.opt("boolean"),
-  "in_header": t.opt(t.union("boolean", t.lit('raw'), t.lit('before_now'), t.lit('after_now'))),
+  "in_header": t.opt(t.union("boolean", t.lit('raw'), t.lit('before_now'), t.lit('after_now'), t.lit('sum'), t.lit('average'))),
   "unit": t.opt(t.union("boolean", t.lit('before_value'))),
   "name_in_header": t.opt("boolean"),
   "header_color_threshold": t.opt("boolean"),

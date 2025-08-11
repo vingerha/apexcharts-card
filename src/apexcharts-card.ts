@@ -858,7 +858,14 @@ class ChartsCard extends LitElement {
                 now.getTime() + (this._seriesOffset[index] ? this._seriesOffset[index] : 0),
                 inHeader === 'before_now',
               );
-            } else {
+            }
+            else if (inHeader === 'sum') {
+              this._headerState[index] = graph.sumValue();
+            } 
+            else if (inHeader === 'average') {
+              this._headerState[index] = graph.averageValue();
+            } 
+            else {
               // not raw
               this._headerState[index] = graph.lastState;
             }
@@ -1128,6 +1135,7 @@ class ChartsCard extends LitElement {
   ) {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const points: any = [];
+	const stacked = this._config?.stacked;
     const multiYAxis =
       this._config?.apex_config?.yaxis &&
       Array.isArray(this._config.apex_config.yaxis) &&
@@ -1135,7 +1143,7 @@ class ChartsCard extends LitElement {
     points.push({
       x: offset ? value[0] - offset : value[0],
       y: invert && value[1] ? -value[1] : value[1],
-      seriesIndex: index,
+      ...(stacked ? {} : { seriesIndex: index }),
       yAxisIndex: multiYAxis ? index : 0,
       marker: {
         strokeColor: bgColor,
@@ -1166,7 +1174,7 @@ class ChartsCard extends LitElement {
       points.push({
         x: offset ? value[0] - offset : value[0],
         y: invert && value[1] ? -value[1] : value[1],
-        seriesIndex: index,
+        ...(stacked ? {} : { seriesIndex: index }),
         yAxisIndex: multiYAxis ? index : 0,
         marker: {
           size: 0,
