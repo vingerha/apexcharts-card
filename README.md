@@ -179,7 +179,6 @@ The card strictly validates all the options available (but not for the `apex_con
 | `opacity` | number | `0.7` for `area`<br/>else `1` | rr2.1.2 | The opacity of the line or filled area, between `0` and `1` |
 | `stroke_width` | number | `5` | rr2.1.2 | Change the width of the line. Only works for `area` and `line` |
 | `stroke_dash` | number | `0` | v1.4.0 | Creates a dashed line. The higher the number, the bigger the dash. An array can be used to specify more complex patterns, e.g.: [1,5] |
-| `marker` | object | ``| v1.4.0 | `size`: sets the size, default 0, `color` defines the color, default black |
 | `type` | string | `line` | rr2.1.2 | `line`, `area` or `column` are supported for now |
 | `curve` | string | `smooth` | rr2.1.2 | `smooth` (nice curve),  `straight` (direct line between points) or `stepline` (flat line until next point then straight up or down), `monotoneCubic` (create a monotone cubic spline) |
 | `extend_to` | boolean or string | `end` | rr2.1.2 | If the value is `end`, it will extend the line/area to the end of the chart. With `now`, it will extend it to the current time (useful for chart showing current and future data). If `false` it will not do anything. Only available for `line` and `area` types. |
