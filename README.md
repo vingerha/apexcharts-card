@@ -116,12 +116,12 @@ $ wget https://github.com/vingerha/apexcharts-card/releases/download/v1.4.0/ape
 
 3. Add the resource reference as described below.
 
-Else, if you prefer the graphical editor, use the menu to add the resource:
+### Add resource reference
 
-1. Make sure, advanced mode is enabled in your user profile (click on your user name to get there)
-2. Navigate to Settings -> Dashboards -> ⋮ in the top-right corner -> Resources -> blue "Add Resource" button
-3. Enter URL `/hacsfiles/apexcharts-card/apexcharts-card.js` and select type "JavaScript Module".
-4. Restart Home Assistant.
+1. Make sure that advanced mode is enabled in your user profile (click on your user name in the sidebar and then scroll down until the Advanced Mode toggle appears)
+3. Navigate to Settings → Dashboards → ⋮ in the top-right corner → Resources → click on the blue "Add Resource" button
+4. Enter the location `/local/apexcharts-card.js` and select type "JavaScript Module".  If in the future the module is made available on HACs you'll need to change this to `/hacsfiles/apexcharts-card/apexcharts-card.js`.
+5. Restart Home Assistant.
 
 ## Data processing steps
 
