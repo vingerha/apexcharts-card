@@ -1,3 +1,10 @@
+### [1.4.1-playground.1](https://github.com/vingerha/apexcharts-card/compare/v1.4.0...v1.4.1-playground.1) (2025-08-13)
+
+
+### Bug Fixes
+
+* **layout:** no local yaxis auto scaling ([2db7391](https://github.com/vingerha/apexcharts-card/commit/2db73917e641111049bff647441e8fb1cf96768d))
+
 ## [1.4.0](https://github.com/vingerha/apexcharts-card/compare/v1.3.0...v1.4.0) (2025-08-11)
 
 
