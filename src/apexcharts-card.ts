@@ -519,6 +519,8 @@ class ChartsCard extends LitElement {
     if (!config.yaxis) return undefined;
     const burned: boolean[] = [];
     this._yAxisConfig = JSON.parse(JSON.stringify(config.yaxis));
+    console.debug('_generateYAxisConfig this._yAxisConfig1: ', this._yAxisConfig)
+    console.debug('_generateYAxisConfig config.series_in_graph: ', config.series_in_graph)
     const yaxisConfig: ApexYAxis[] = config.series_in_graph.map((serie, serieIndex) => {
       let idx = -1;
       if (config.yaxis?.length !== 1) {
@@ -539,6 +541,9 @@ class ChartsCard extends LitElement {
       yAxisDup.decimalsInFloat =
         // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
         config.yaxis![idx].decimals === undefined ? DEFAULT_FLOAT_PRECISION : config.yaxis![idx].decimals;
+      yAxisDup.seriesName =
+        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+        config.yaxis![idx].id === undefined ? undefined : config.series_in_graph[serieIndex].name;  
       if (this._yAxisConfig?.[idx].series_id) {
         this._yAxisConfig?.[idx].series_id?.push(serieIndex);
       } else {
@@ -561,7 +566,9 @@ class ChartsCard extends LitElement {
         burned[idx] = true;
       }
       return yAxisDup;
+      console.debug('_generateYAxisConfig yaxisDup : ', yAxisDup)
     });
+    console.debug('_generateYAxisConfig yaxisConfig : ', yaxisConfig)
     return yaxisConfig;
   }
 
@@ -789,6 +796,8 @@ class ChartsCard extends LitElement {
         (layout as any).chart.id = Math.random().toString(36).substring(7);
       }
       this._apexChart = new ApexCharts(graph, layout);
+      console.debug('_initialLoad layout: ', layout)
+      console.debug('_initialLoad this._apexChart: ', this._apexChart)
       const ann: any =
         (this._apexChart as any).annotations
           ?? Object.values(this._apexChart as any)
@@ -912,6 +921,7 @@ class ChartsCard extends LitElement {
         if (this._yAxisConfig) {
           graphData.yaxis = this._computeYAxisAutoMinMax(start, end);
         }
+        
         if (!this._apexBrush) {
           graphData.xaxis = {
             min: start.getTime() - this._serverTimeOffset,
@@ -1275,18 +1285,28 @@ class ChartsCard extends LitElement {
             }
           }
         }
-		yaxis.series_id?.forEach((id) => {
-          if (yaxis.min !== null && yaxis.min !== undefined) {
-            this._config!.apex_config!.yaxis![id].min = yaxis.min
-          } else {
-            delete yaxis.min
+        yaxis.series_id?.forEach((id) => {
+          if (min !== null && yaxis.min_type !== minmax_type.FIXED) {
+            // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+            this._config!.apex_config!.yaxis![id].min = this._getMinMaxBasedOnType(
+              true,
+              min,
+              yaxis.min as number,
+              // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+              yaxis.min_type!,
+            );
           }
-          if (yaxis.max !== null && yaxis.max) {
-            this._config!.apex_config!.yaxis![id].max = yaxis.max
-          } else {
-            delete yaxis.max
+          if (max !== null && yaxis.max_type !== minmax_type.FIXED) {
+            // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+            this._config!.apex_config!.yaxis![id].max = this._getMinMaxBasedOnType(
+              false,
+              max,
+              yaxis.max as number,
+              // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+              yaxis.max_type!,
+            );			   
           }
-        });        
+        });
       }
     });
     return this._config?.apex_config?.yaxis;
