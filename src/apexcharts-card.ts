@@ -1275,28 +1275,18 @@ class ChartsCard extends LitElement {
             }
           }
         }
-        yaxis.series_id?.forEach((id) => {
-          if (min !== null && yaxis.min_type !== minmax_type.FIXED) {
-            // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-            this._config!.apex_config!.yaxis![id].min = this._getMinMaxBasedOnType(
-              true,
-              min,
-              yaxis.min as number,
-              // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-              yaxis.min_type!,
-            );
+		yaxis.series_id?.forEach((id) => {
+          if (yaxis.min !== null && yaxis.min !== undefined) {
+            this._config!.apex_config!.yaxis![id].min = yaxis.min
+          } else {
+            delete yaxis.min
           }
-          if (max !== null && yaxis.max_type !== minmax_type.FIXED) {
-            // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-            this._config!.apex_config!.yaxis![id].max = this._getMinMaxBasedOnType(
-              false,
-              max,
-              yaxis.max as number,
-              // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-              yaxis.max_type!,
-            );
+          if (yaxis.max !== null && yaxis.max) {
+            this._config!.apex_config!.yaxis![id].max = yaxis.max
+          } else {
+            delete yaxis.max
           }
-        });
+        });        
       }
     });
     return this._config?.apex_config?.yaxis;
