@@ -44,5 +44,5 @@ module.exports = {
     ],
   ],
   preset: 'conventionalcommits',
-  branches: [{ name: 'master' }, { name: 'dev', prerelease: true }],
+  branches: [{ name: 'master' }, { name: 'dev', prerelease: true }, { name: 'playground', prerelease: true }],
 };
