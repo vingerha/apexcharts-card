@@ -1,3 +1,10 @@
+### [1.4.1-playground.3](https://github.com/vingerha/apexcharts-card/compare/v1.4.1-playground.2...v1.4.1-playground.3) (2025-08-14)
+
+
+### Bug Fixes
+
+* **layout:** further work on yaxis and scaling ([4b228b4](https://github.com/vingerha/apexcharts-card/commit/4b228b40f32f32213797785591594711ed59e388))
+
 ### [1.4.1-playground.2](https://github.com/vingerha/apexcharts-card/compare/v1.4.1-playground.1...v1.4.1-playground.2) (2025-08-13)
 
 
