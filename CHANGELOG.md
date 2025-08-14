@@ -1,3 +1,10 @@
+### [1.4.1-playground.2](https://github.com/vingerha/apexcharts-card/compare/v1.4.1-playground.1...v1.4.1-playground.2) (2025-08-13)
+
+
+### Bug Fixes
+
+* **latout:** further improve yaxis selection/scaling ([701a8c8](https://github.com/vingerha/apexcharts-card/commit/701a8c8d645e7d2481545f93a76b2e1b82c19728))
+
 ### [1.4.1-playground.1](https://github.com/vingerha/apexcharts-card/compare/v1.4.0...v1.4.1-playground.1) (2025-08-13)
 
 
