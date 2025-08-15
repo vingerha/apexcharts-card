@@ -10,8 +10,6 @@
 
 **Created July 2025 as the original repo seems no longer supported since mid 2024.**
 
-### Looking for co-maintainers for this repo, please ping me <!-- omit in toc -->
-
 ## Changes since the copy from RomRider v2.1.2 (this section will be removed in due time)
 
 Fixes:
