@@ -143,7 +143,7 @@ The card strictly validates all the options available (but not for the `apex_con
 | `show` | object | | rr2.1.2 | See [show](#main-show-options) |
 | `hours_12` | boolean | | rr2.1.2 | If undefined, it will follow Home-Assistant's user time format. If `true`, it will force time to be displayed in 12h format. If `false` it will force the time to be displayed in 24h format. |
 | `cache` | boolean | `true` | rr2.1.2 | Use in-browser data caching to reduce the load on Home Assistant's server |
-| `stacked` | boolean | `false` | rr2.1.2 | Enable if you want the data to be stacked on the graph |
+| `stacked` | boolean | `false` | rr2.1.2 | Enable if you want the data to be stacked on the graph.  By default multiple data series will be superimposed on top of each other, if you enable the stacked display the series will be stacked on top of each other to show the cumulative total  |
 | `layout` | string | | rr2.1.2 | See [layouts](#layouts) |
 | `header` | object | | rr2.1.2 | See [header](#header-options) |
 | `now` | object | | rr2.1.2 | See [now](#now-options) |
